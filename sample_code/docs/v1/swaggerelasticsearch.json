@@ -1,0 +1,168 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Thimar Real Estate | Property Service",
+    "description": ""
+  },
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "host": "http://localhost:9200",
+  "basePath": "v2",
+  "servers": [
+    {
+      "url": "http://localhost:9200",
+      "description": "Development server"
+    }
+  ],
+  "paths": {
+    "/property_development/_search?type=new": {
+      "post": {
+        "tags": ["Elasticsearch"],
+        "summary": "Search property for sale from elasticsearch",
+        "requestBody": {
+          "description": "Elasticsearch Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/propertyForSaleElasticsearch"
+              }
+            }
+          }
+        },
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/property_development/_search?type=old": {
+      "post": {
+        "tags": ["Elasticsearch"],
+        "summary": "Sort algorithem elasticsearch",
+        "requestBody": {
+          "description": "Elasticsearch Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/sortAlgorithemElasticsearch"
+              }
+            }
+          }
+        },
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "propertyForSaleElasticsearch": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "number",
+          "example": 0
+        },
+        "size": {
+          "type": "number",
+          "example": 20
+        },
+        "_source": {
+          "type": "array",
+          "example": {
+            "bool": {
+                "must": [
+                    {
+                        "match": {
+                            "searchCriteria.propertyMainTypeId": 3
+                        }
+                    },
+                    {
+                        "match": {
+                            "searchCriteria.propertyForId": 3
+                        }
+                    },
+                    {
+                        "bool": {
+                            "should": [
+                                {
+                                    "term": {
+                                        "searchCriteria.countryId": 3
+                                    }
+                                },
+                                {
+                                    "term": {
+                                        "searchCriteria.cityId": 1
+                                    }
+                                },
+                                {
+                                    "match": {
+                                        "searchCriteria.zoneId": 1
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+          },
+        },
+        "sort": {
+          "type": "array",
+          "example": [
+            {
+              "publishedAt": {
+                "order": "desc"
+              }
+            }
+          ]
+        },
+      }
+    },
+    "sortAlgorithemElasticsearch": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "number",
+          "example": 0
+        },
+        "size": {
+          "type": "number",
+          "example": 20
+        },
+        "_source": {
+          "type": "array",
+          "example": ["id","publishedAt","isFeatured","searchCriteria.managedById"]
+        },
+        "sort": {
+          "type": "array",
+          "example": [
+            {
+              "on_top": {
+                "order": "desc"
+              }
+            },
+            {
+              "isFeatured": {
+                "order": "desc"
+              }
+            },
+            {
+              "publishedAt": {
+                "order": "desc"
+              }
+            }
+          ]
+        },
+      }
+    }
+  }
+}

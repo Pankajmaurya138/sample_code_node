@@ -1,0 +1,2008 @@
+syntax = "proto3";
+service PropertyService {
+    rpc AddPropertyForKsa (PropertyRequest) returns (Response) {};
+    rpc AddPropertyForInternational (PropertyRequest) returns (Response) {};
+    rpc DeleteProperty (PropertyParamRequest)  returns (Response) {}; 
+    rpc GetPropertyById (PropertyParamRequest) returns (Response) {};
+    rpc EditProperty (EditPropertyRequest) returns (EditPropertyResponse) {};
+    rpc UpdateProperty (PropertyRequest) returns (Response) {};
+    rpc GetShortJourney (ShortJourneyRequest) returns (ShortJourneyResponse) {};
+    rpc PostShortJourney (PostPropertyShortJourneyRequest) returns (ShortJourneyResponse) {};
+    rpc GetLongJourneyPropertyById(LongJourneyRequest) returns (PostPropertyLongJourneyResponse) {};
+    rpc getFeaturePropertyById(LongJourneyFeatureProperty) returns (PostPropertyFeatureResponse) {};
+    rpc postFeatureProperty(PostLongJourneyFeatureProperty) returns (PostLongJourneyFeaturePropertyResponse) {};
+    rpc AddLongJourneyProperty(AddLongJourneyRequest) returns (addLongJourneyResponse) {};
+    rpc GetPropertyByPostPropertyId (GetPropertyRequest) returns (GetPropertyResponse){};
+    rpc GetUserPropertiesByUserId (GetPostPropertyRequest) returns (GetPostPropertyResponse);
+    rpc GetUserPostPropertyStatusCount (PostPropertyStatusCountRequest) returns (PostPropertyStatusCountResponse);
+    rpc UpdatePostPropertyStatus (PostPropertyUpdateStatusRequest) returns (PostPropertyUpdateStatusResponse){};
+    rpc PostBulkPropertiesCreateByXML (ShortJourneyRequest) returns (ShortJourneyResponse) {};
+    rpc PostBulkProperties (PostBulkPropertiesReq) returns (PostBulkPropertiesRes) {};
+    rpc PostBulkPropertiesSummary (PostBulkPropertiesSummaryReq) returns (PostBulkPropertiesSummaryRes) {};
+    rpc AssignPropertyToUser (AssignedRequest) returns (AssignedStatusResponse) {};
+    rpc addPropertyPhotosAndVideo (addPropertyPhotosAndVideoReq) returns (addPropertyPhotosAndVideoRes) {};
+    rpc getPropertyPhotosAndVideo (getPropertyPhotosAndVideoReq) returns (getPropertyPhotosAndVideoRes) {};
+    rpc savePropertyBasicDetails (savePropertyBasicDetailsReq) returns (savePropertyBasicDetailsRes) {};
+    rpc propertyHolderVerification (propertyHolderVerificationReq) returns (propertyHolderVerificationRes) {};
+    rpc getPropertyHolderVerification (getPropertyHolderVerificationReq) returns (getPropertyHolderVerificationRes) {};
+    rpc getPropertyHolderVerificationV3 (getPropertyHolderVerificationV3Req) returns (getPropertyHolderVerificationV3Res) {};
+    rpc savePropertyLocation (savePropertyLocationReq) returns (savePropertyLocationRes) {};
+    rpc getPropertyLocation (getPropertyLocationReq) returns (getPropertyLocationRes) {};
+    rpc getPropertyBasicDetails (getPropertyBasicDetailsReq) returns (getPropertyBasicDetailsRes) {};
+    rpc getAmenities (getAmenitiesReq) returns (getAmenitiesRes) {};
+    rpc addAmenities (addAmenitiesReq) returns (addAmenitiesRes) {};
+    rpc getAssigneeDetails (getAssigneeDetailsReq) returns (getAssigneeDetailsRes) {};
+    rpc removeSubUserFromProperties(removeSubUserFromPropertiesReq) returns (removeSubUserFromPropertiesRes) {}
+    rpc editAssigneeDetails (editAssigneeDetailsReq) returns (editAssigneeDetailsRes) {};
+    rpc ping(statusRequest) returns(statusResponse){};
+    rpc getPropertyStepData(getPropertyStepDataReq) returns (getPropertyStepDataRes) {};
+    rpc assignPropertyToQC(assignPropertyToQCReq) returns (getAssigneeDetailsRes) {};
+    rpc getPropertyPreviewData(getPropertyPreviewDataReq) returns (getPropertyPreviewDataRes) {};
+    rpc addPropertyTranslation(addPropertyTranslationReq) returns (getPropertyStepDataRes) {};
+    rpc getPropertyBasicDetailsById (getPropertyBasicDetailsByIdReq) returns (getPropertyBasicDetailsByIdRes) {};
+    rpc getPropertyApprovedDate (getPropertyApprovedDateReq) returns (getPropertyApprovedDateRes) {};
+    rpc getCompanyNameDetails(getCompanyNameDetailReq) returns (getCompanyNameDetailRes){};
+    rpc saveCompanyNameDetail(saveCompanyDetailReq) returns (saveCompanyDetailRes){};
+    rpc listingUserVerification (listingUserVerificationReq) returns (listingUserVerificationRes) {};
+    rpc getListingUserVerification (getListingUserVerificationReq) returns (getListingUserVerificationRes) {};
+    rpc wathqCrDetails(wathqCrDetailsReq) returns (wathqCrDetailsRes){};
+    rpc saveRegaAuthDetails(saveRegaAuthDetailsReq) returns (saveRegaAuthDetailsRes){};
+    rpc postPropertyAuthorizationUpload (postPropertyAuthorizationUploadReq) returns (postPropertyAuthorizationUploadRes) {};
+    rpc postPropertyAuthorizationTypeUpdate (postPropertyAuthorizationUploadReq) returns (postPropertyAuthorizationUploadRes) {}; 
+    rpc getPostPropertyAuthorization (getPostPropertyAuthorizationReq) returns (getPostPropertyAuthorizationRes) {}; 
+    rpc getPropertyId (getPropertyIdReq) returns (getPropertyIdRes) {}; 
+    rpc getPropertyFilesByPropertyIds (PropertyIdsRequest) returns (PropertyFilesResponse) {};
+    rpc wathqDeedVerification (wathqDeedVerificationReq) returns (wathqDeedVerificationRes) {};
+    rpc regaAdVerification (regaAdVerificationReq) returns (regaAdVerificationRes) {};
+    rpc addLongJourneyPropertyV3(addLongJourneyRequestV3) returns (addLongJourneyResponseV3) {};
+    rpc getLongJourneyPropertyByIdV3(longJourneyRequestV3) returns (postPropertyLongJourneyResponseV3) {};
+    rpc postFeaturePropertyV3(postLongJourneyFeaturePropertyV3) returns (postLongJourneyFeaturePropertyResponseV3) {};
+    rpc getFeaturePropertyByIdV3(longJourneyFeaturePropertyV3) returns (postPropertyFeatureResponseV3) {};
+    rpc addAmenitiesV3 (addAmenitiesReqV3) returns (addAmenitiesResV3) {};
+    rpc getAmenitiesV3 (getAmenitiesReqV3) returns (getAmenitiesResV3) {};
+    rpc getReassignedProperties (getReassignedPropertiesReq) returns (getBriefPropertiesRes) {};
+    rpc getAssignedProperties (getAssignedPropertiesReq) returns (getBriefPropertiesRes) {};
+    rpc reAssignPropertyToTeam (reAssignPropertyToTeamReq) returns (reAssignPropertyToTeamRes) {};
+    rpc getTeamReviews (getTeamReviewsReq) returns (getTeamReviewsRes) {};
+    rpc GetUserPropertiesByUserIdV3 (GetPostPropertyRequest) returns (GetPostPropertyResponse);
+    rpc GetUserPostPropertyStatusCountV3 (PostPropertyStatusCountRequestV3) returns (PostPropertyStatusCountResponse);
+    rpc getActivePropertyCountByPropertyIds (PropertyIdsRequest) returns (PropertyCountResponse) {};
+    rpc getPropertyDescription (getPropertyDescriptionReq) returns (getPropertyDescriptionRes) {};
+    rpc getTitle(getTitleRequest) returns (getTitleResponse);
+    rpc markPropertyOccupied(markPropertyOccupiedReq) returns (markPropertyOccupiedRes);
+    rpc getSubuserPropertiesCount(getSubuserPropertiesReq) returns (getSubuserPropertiesRes);
+    rpc rejectProperty (UserPropertyReq) returns (rejectPropertyRes) {};
+    rpc pushPropertyToLive (UserPropertyReq) returns (pushPropertyToLiveRes) {};
+    rpc getPropertyForAmbassadorById (UserPropertyReq) returns (propertyDetailedRes) {};
+    rpc getPropertyStreetInfoByPropertyId (getPropertyStreetInfoByPropertyIdReq) returns (getPropertyStreetInfoByPropertyIdRes) {};
+    rpc getPropertyAmenitiesById (getPropertyAmenitiesByIdReq) returns (getPropertyAmenitiesByIdRes) {};
+    rpc getAmbassadorDashboardData (getAmbassadorDashboardDataRequest) returns (getAmbassadorDashboardDataResponse) {};
+    rpc getPropertiesUnderReview (getPropertiesUnderReviewReq) returns (getBriefPropertiesRes) {};
+    rpc listingUserPropertyBifurcation (UserPropertyStatusCountRequest) returns (PostPropertyStatusCountResponse) {};
+    // rpc getPostPropertyUserForAmbassador (getPostPropertyUserForAmbassadorReq) returns (getPostPropertyUserForAmbassadorRes){};
+    rpc getAmbassadorPerformance (getAmbassadorPerformanceReq) returns (getAmbassadorPerformanceRes) {};
+    rpc getPostPropertyUserForAmbassador (getPostPropertyUserForAmbassadorReq) returns (getPostPropertyUserForAmbassadorRes){};
+}
+
+message UserPropertyStatusCountRequest{
+    required int32 userId = 1;
+    required string locale = 2;
+    
+}
+
+message getAmbassadorPerformanceReq{
+    int32 roleId = 1;
+    int32 userId = 2;
+    string period = 3;
+}
+
+message getAmbassadorPerformanceRes{
+    bool status = 1;
+    string message = 2;
+    Error error = 3;
+    ambassadorPerformance data = 4;
+}
+
+message ambassadorPerformance{
+    int32 liveListings = 1;
+    string avgTATinHours = 2;
+    int32 imagesUploaded = 3;
+    int32 avgImagesPerListing = 4;
+    int32 sellersOnboarded = 5;
+    int32 reassignedListings = 6;
+}
+
+message getPostPropertyUserForAmbassadorReq{
+    required int32 userId = 1;
+    required int32 postPropertyId=2;
+}
+
+message getPostPropertyUserForAmbassadorRes{
+    required int32 userId = 1;
+    Error error = 2;
+}
+
+message getPropertiesUnderReviewReq{
+    required int32 roleId = 1;
+    required int32 userId = 2;
+    required string locale = 3;
+    optional int32 assignedRole = 4;
+}
+
+message propertyDetailedRes{
+    bool status = 1;
+    string message = 2;
+    Error error = 3;
+    propertyDetail data = 4;
+}
+
+message UserPropertyReq{
+    required int32 propertyId = 1;
+    required int32 userId = 2;
+    required string locale = 3;
+}
+
+message getPropertyAmenitiesByIdReq{
+    required int32 propertyId = 1;
+    required string locale = 2;
+}
+
+message propertyAmenity{
+    int32 id = 1;
+    string icon = 2;
+    int32 amenityTypeId = 3;
+    string name = 4;
+    string slug = 5;
+}
+
+message getPropertyAmenitiesByIdRes{
+    bool status = 1;
+    string message = 2;
+    Error error = 3;
+    repeated propertyAmenity data = 4;
+}
+ 
+
+message getPropertyStreetInfoByPropertyIdReq{
+    required int32 propertyId = 1;
+    required string locale = 2;
+}
+
+message getPropertyStreetInfoByPropertyIdRes{
+    bool status = 1;
+    string message = 2;
+    Error error = 3;
+    repeated streetInfoReq data = 4;
+}
+
+message rejectPropertyRes{
+    required bool status = 1;
+    required string message = 2;
+    Error error = 3;
+}
+
+message pushPropertyToLiveRes{
+    bool status = 1;
+    string message = 2;
+    Error error = 3;
+}
+
+
+message getTeamReviewsReq{
+    required int32 roleId = 1;
+    required int32 propertyId = 2;
+    required int32 userId = 3;
+    required string locale = 4;
+}
+
+message TeamReviewMeta{
+    repeated string stages = 1;
+}
+
+message TeamReview{
+    int32 id = 1;
+    int32 status_id = 2;
+    string message = 3;
+    TeamReviewMeta stagesMeta = 4;
+    string createdAt = 5;
+    int32 entityId = 6;
+    string statusName = 7;
+    string resolverName = 8;
+    string reviewerName = 9;
+    string propertyTitle = 10;
+}
+
+message getTeamReviewsRes{
+    string message = 1;
+    bool status = 2;
+    repeated TeamReview data = 3;
+    Error error = 4;
+}
+
+message sellerInfo {
+    optional int32 id = 1;
+    optional string fullName = 2;
+    optional int32 phoneNumber = 3;
+    optional string phoneNumberCountryCode = 4;
+    optional int32 roleId = 5;
+    optional string roleName = 6;
+}
+
+message propertyBrief{
+    message Attributes {
+          string key = 1;
+          string name = 2;
+          uint32 value = 3;
+          string image = 4;
+          string unit = 5;
+          string iconClass = 6;
+      }
+    int32 postPropertyId = 1;
+    int32 propertyId = 2;
+    int32 reviewsCount = 3;
+    int32 noOfBedrooms = 4;
+    int32 noOfBathrooms = 5;
+    int32 builtUpArea = 6;
+    int32 salePrice = 7;
+    int32 expectedRent = 8;
+    repeated addPropertyFilesArrayRes files = 9;
+    Translation translation = 10;
+    sellerInfo seller = 11;
+    string cityName = 12;
+    string districtName = 13;
+    int32 reviewId = 14;
+    repeated Attributes attributes = 15;
+    optional UserPropertyAttribute attribute = 16;
+    optional bool premiumProperty = 17;
+}
+
+message propertyDetail{
+    message Attributes {
+          string key = 1;
+          string name = 2;
+          uint32 value = 3;
+          string image = 4;
+          string unit = 5;
+          string iconClass = 6;
+      }
+    message GeneralInfo{
+        int32 postPropertyId = 1;
+        string wasaltRegaAdvertiserId = 2; 
+        int32 slug = 3;
+        string title = 4;
+        string sourceType = 5;
+        string propertyType = 6;
+        string description = 7;
+        string authorizationNumber = 8;
+        string createdAt = 9;
+        string darReference = 10;
+        string furnishingType = 11;
+        string managedBy = 12; 
+        string possessionType = 13;
+        int32 expectedRent = 14;
+        int32 salePrice = 15;
+        string external360Link = 16;
+    }
+    message LocationInfo{
+        string address = 1;
+        string latitude = 2;
+        string longitude = 3;
+        string district = 4;
+    }
+    message AdditionalInfo{
+        int32 landLength = 1;
+        int32 landDepth = 2;
+        int32 noOfFloors = 3;
+        int32 noOfWaterWells = 4;
+        int32 noOfOpening = 5;
+        int32 noOfPalmTrees = 6;
+        string propertyMainType = 7;
+        int32 noOfParkings = 8;
+        int32 floorNumber = 9;
+        string residenceType = 10;
+        bool electricityMeter = 11;
+        bool waterMeter = 12;
+        bool isCondtrained = 13;
+        bool isHalt = 14;
+    }
+    message Icons{
+        string bathroom = 1;
+        string bedroom = 2;
+        string furniture = 3;
+        string noOfLivingrooms = 4;
+        string noOfGuestrooms = 5;
+        string carpetArea = 6;
+        string builtUpArea = 7;
+        string completionYear = 8;
+    }
+    message AttributesInfo{
+        int32 noOfBathrooms = 1;
+        int32 noOfBedrooms = 2;
+        string unitType = 3;
+        int32 noOfLivingrooms = 4;
+        int32 noOfGuestrooms = 5;
+        int32 carpetArea = 6;
+        int32 builtUpArea = 7;
+        string currencyType = 8;
+        Icons icons = 9;
+    }
+    int32 id = 1;
+    GeneralInfo generalInfo = 2;
+    LocationInfo locationInfo = 3;
+    AdditionalInfo additionalInfo = 4;
+    sellerInfo sellerInfo = 5;
+    AttributesInfo attributesInfo = 6;
+    repeated addPropertyFilesArrayRes files = 7;
+    repeated Attributes attributes = 8;
+}
+
+message getReassignedPropertiesReq{
+    required int32 userId = 1;
+    required string locale = 2;
+    required int32 roleId = 3;
+}
+
+message getBriefPropertiesRes{
+    optional string message = 1;
+    optional bool status = 2;
+    repeated propertyBrief data = 3;
+    Error error = 4;
+}
+
+message getAssignedPropertiesReq{
+    required int32 userId = 1;
+    required string locale = 2;
+    optional int32 roleId = 3;
+}
+
+message reAssignPropertyToTeamReq{
+    required int32 userId = 1;
+    required string locale = 2;
+    required int32 propertyId = 3;
+    required int32 resolverRoleId = 4;
+    optional TeamReviewMeta stagesMeta = 5;
+    optional string message = 6;
+}
+
+message reAssignPropertyToTeamRes{
+    optional string message = 1;
+    optional bool status = 2;
+    Error error = 3;
+}
+
+
+message PropertyCountResponse{
+    repeated propertyList count  = 1;
+}
+
+message propertyList {
+    int32 id = 1;
+    int32 status_type_id = 2;
+}
+
+message PostBulkPropertiesSummaryResData {
+    optional int32 id= 1;
+    optional int32 successCount= 2;
+    optional int32 failureCount= 3;
+    optional string createdAt= 4;
+    optional string userId = 5;
+    optional string xmlUrl = 6;
+    optional int32 totalProperties = 7;
+}
+
+message PostBulkPropertiesSummaryRes{
+    optional string error = 1;
+    repeated PostBulkPropertiesSummaryResData data = 2;
+    optional string message = 3;
+}
+
+
+message PostBulkPropertiesSummaryReq{
+    optional string userId = 1;
+    optional string xmlUrl = 2;
+}
+
+
+message XMLValidationError {
+ optional string error = 1;
+ optional string propertyNo = 2;
+}
+
+
+message XMLPostBulkPropertiesRes {
+    optional int32 id = 1;
+    int32 userId = 2;
+    optional int32 userTypeId = 3;
+    optional string licenseNumber = 4;
+    optional bool isDifferentOwner = 5;
+    optional int32 managedById = 6;
+    optional int32 cityId = 7;
+    optional uint64 titleDeedNo = 8;
+    optional uint64 nationalIdNumber = 9;
+    optional string idType = 10;
+    optional string ownerName = 11;
+    optional uint64 ownerMobileNo = 12;
+    optional string ownerMobileCountryCode = 13;
+    optional uint64 regaAuthorizationId = 14;
+    optional string status = 15;
+    optional string currentStep = 16;
+    optional string realestateDeedId = 17;
+    optional string isWathqVerified = 18;
+    optional string regaAdNumber = 19;
+}
+
+message XMLDBrrors {
+    optional string error = 1;
+    optional string propertyNo = 2;
+}
+
+message PostBulkPropertiesRes {
+    optional XMLPostBulkPropertiesRes data = 2;
+    repeated XMLValidationError XMLValidationError = 3;
+    repeated XMLDBrrors xmlDBrrors = 4;
+    optional int32 totalPropertyCreated = 5;
+}
+
+message XMLTypes {
+    optional string en=1;
+    optional string es=2;
+}
+
+message XMLTDesc {
+    optional string en=1;
+    optional string es=2;
+    optional string ar=3;
+}
+
+message XMLFeatures {
+    repeated string feature = 1;
+}
+
+message XMLProplocation {
+    optional int32 countryId = 1;
+    optional int32 stateId = 2;
+    optional int32 cityId = 3;
+    optional int32 zoneId = 4;
+    optional int32 buildingNumber = 5;
+    optional int32 additionalNumbers = 6;
+    optional string latitude = 7;
+    optional string longitude = 8;
+}
+
+message XMLSurfaceArea {
+   optional string built = 1; 
+   optional string plot = 2;
+}
+
+message XMLImage {
+    optional string url = 1;
+    optional string id = 2;
+}
+
+message XMLPropImages {
+    repeated XMLImage image = 1;
+}
+
+message XMLProperty{
+    optional string id = 1;
+    optional string date = 2;
+    optional string country = 3;
+    optional string province = 4;
+    optional string town = 5;
+    optional string location_detail = 6;
+    optional string beds = 7;
+    optional string baths = 8;
+    optional string pool = 9;
+    optional XMLFeatures features= 10;
+    optional XMLTypes type = 12;
+    optional XMLTDesc desc = 13;
+    optional string typeStr = 14;
+    optional string ref = 15;
+    optional string currency = 16;
+    optional XMLProplocation location= 17;
+    optional XMLSurfaceArea surface_area = 18;
+    optional XMLPropImages images = 19;
+    optional string price = 20;
+    optional int32 new_build = 21;
+    optional string price_freq = 22;
+}
+
+
+message XMLkyero {
+    optional string feed_version = 1;
+}
+
+message PostBulkPropertiesReq{
+    optional string userId = 1;
+    optional string date = 2;
+    repeated XMLProperty property= 3;
+    optional XMLkyero kyero = 4;
+    optional string xmlUrl = 5;
+    optional string country = 6;
+    optional string currency = 7;
+}
+
+
+message DummyReq {
+    optional int32 id = 1; 
+}
+
+message DummyRes {
+    optional string error = 1;
+    optional DummyReq property = 2; 
+}
+
+message PropType {
+    optional string en = 1;
+    optional string ar = 2;
+    optional string es = 3;
+}
+
+message PropTypeDesc {
+    optional string en = 1;
+    optional string ar = 2;
+    optional string es = 3;
+
+}
+
+message XMLRes {
+    optional string error = 1;
+    optional string message  = 2;
+    optional XMLData data  = 3;
+}
+
+message XMLData {
+    required string userId = 1;
+    required string xmlUrl = 2;  
+}
+
+message ShortJourneyRequest{
+    optional int32 id = 1;
+    required int32 userId = 2;
+}
+message ShortJourneyResponse {
+    optional Error error = 1;
+    optional PostPropertyShortJourneyRequest data = 2;
+}
+message PostPropertyShortJourneyRequest {
+    optional int32 id = 1;
+    int32 userId = 2;
+    optional int32 userTypeId = 3;
+    optional string licenseNumber = 4;
+    optional bool isDifferentOwner = 5;
+    optional int32 managedById = 6;
+    optional int32 cityId = 7;
+    optional uint64 titleDeedNo = 8;
+    optional uint64 nationalIdNumber = 9;
+    optional string idType = 10;
+    optional string ownerName = 11;
+    optional uint64 ownerMobileNo = 12;
+    optional string ownerMobileCountryCode = 13;
+    optional uint64 regaAuthorizationId = 14;
+    optional string status = 15;
+    optional string currentStep = 16;
+    optional string realestateDeedId = 17;
+    optional string isWathqVerified = 18;
+    optional string regaAdNumber = 19;
+    optional string source = 20;
+}
+message Error {
+    optional string message = 1;
+    required string code = 2;
+}
+
+message Response {
+    optional Error error = 1;
+    optional Property property = 2;
+}
+
+message Property {
+    required int32 id = 1;
+    optional string title = 2;
+    optional string slug = 3;
+    optional string propertyMainType = 4;
+    optional string external360Link = 5;
+    optional string externalVideoUrl = 6;
+    optional string darReference = 7;
+    optional bool isWhatsappLater = 8;
+    optional string propertyRegionType = 9;
+    optional int32 propertyRegionId = 10;
+    optional int32 statusTypeId = 11;
+    optional Attribute attribute = 12;
+    repeated string propertyFiles = 13;
+}
+message Attribute {
+    optional int32 noOfBedrooms = 1;
+    optional int32 noOfBathrooms = 2;
+    optional PropertyAreaAttribute area = 3;
+    optional PropertyPriceAttribute price = 4;
+}
+message PropertyAreaAttribute {
+    optional string propertyUnitType = 1;
+    optional int32 builtUpArea = 2;
+    optional int32 carpetArea = 3;
+}
+message PropertyPriceAttribute {
+    optional string propertyCurrencyType = 1;
+    optional double salePrice = 2;
+    optional double expectedRent = 3;
+    optional double yearlyCharges = 4;
+
+}
+
+message PropertyRequest {
+    optional int32 id = 1;
+    optional string locale = 2;
+	required PropertyGeneral generalInfo = 3;
+    required PropertyAttribute attribute = 4;
+    required PropertyLocation location = 5;
+    required PropertyTranslation translation = 6;
+    repeated Amenity amenity = 7;
+    required PropertyFile file = 8;
+    
+}
+message PropertyGeneral {
+    required int32 propertyRegionId = 1;
+    required int32 listingTypeId = 2;
+    required int32 managedById = 3;
+    required int32 mainTypeId = 4;
+    required int32 propertyTypeId = 5;
+    required int32 optionTypeId = 6;
+    optional int32 developerId = 7;
+    optional int32 projectId = 8;
+    required int32 userId =9;
+    optional int32 statusTypeId =10;
+    optional PropertyStatus status = 11;
+    optional PropertyOther other = 12;
+}
+message PropertyStatus {
+    optional bool isSold = 1;
+    optional bool isEclusive = 2;
+    optional bool isHotDeal = 3;
+    optional bool isInspected = 4;
+    optional bool isFeatured = 5;
+    optional bool isRecommended = 6;
+    optional bool isAlreadyLeased = 7;
+    optional bool isHighInvestmentReturn = 8;
+    optional bool isGreatPrice = 9;
+    optional bool isActive = 10;
+    optional bool isWhatsappLater = 11;
+}
+message PropertyOther {
+    optional string external360Link = 1;
+    optional string externalVideoLink = 2;
+    optional string darReference = 3;
+    optional string unitReference = 4;
+    optional string enDeveloperName = 5;
+    optional string arDeveloperName = 6;
+    optional string enProjectName = 7;
+    optional string arProjectName = 8;
+    optional string isWhatsappLater = 9;
+    optional string sourceTypeId = 10;
+    optional string approveBefore = 11;
+}
+message PropertyAttribute {
+    optional GeneralAttribute general = 1;
+    optional AttributeType type = 2;
+    optional AreaAttribute area = 3;
+    optional PriceAttribute price = 4;
+}
+
+message PriceAttribute {
+    optional int32 currencyTypeId = 1;
+    optional double salePrice = 2;
+    optional double expectedRent = 3;
+    optional double yearlyCharges = 4;
+    optional int32 rentCycle = 5;
+    optional double monthlyChargeRange = 6;
+    optional double securityDepositAmount = 7;
+}
+message GeneralAttribute {
+    optional int32 noOfBedrooms = 1;
+    optional int32 noOfBathrooms = 2;
+    optional int32 noOfFloors = 3;
+    optional int32 floorNumber = 4;
+    optional int32 noOfRetailOutlets = 5;
+    optional int32 noOfApartments = 6;
+    optional int32 noOfWaterWells = 7;
+    optional int32 noOfPalmTrees = 8;
+    optional int32 noOfParkings = 9;
+    optional int32 streetWidth = 10;
+}
+message AttributeType {
+    optional int32 facingTypeId = 1;
+    optional int32 furnishingTypeId = 2;
+    optional int32 possessionTypeId = 3;
+    optional string possessionDate = 4;
+    
+}
+
+message AreaAttribute {
+    optional  int32 unitTypeId = 1;
+    optional int32 builtUpArea = 2;
+    optional int32 carpetArea = 3;
+    optional int32 completionYear = 4;
+    optional bool isAlreadyLeased = 5;
+    optional double leaseAmount = 6;
+    optional string leaseContractEndDate = 7;
+    optional string campCapacity = 8;
+}
+
+
+
+message PropertyTranslation {
+    Translation en = 1;
+    Translation ar = 2;
+}
+
+
+message PropertyPrice {
+    optional double securityDepositAmount = 1;
+    optional int32 currencyTypeId = 2;
+    optional int32 rentCycle = 3;
+    optional double monthlyChargeRange = 4;
+    optional bool isRentNegotiable = 5;
+    optional double salePrice = 6;
+    optional double expectedRent = 7;
+    
+}
+
+message PropertyLocation {
+    required int32 countryId = 1;
+    required int32 stateId = 2;
+    required int32 cityId = 3;
+    required int32 zoneId = 4;
+    required int32 buildingNumber = 5;
+    required int32 additionalNumbers = 6;
+    required string latitude = 7;
+    required string longitude = 8;
+}
+message Translation {
+    optional string title = 1;
+    optional string address = 2;
+    optional string landmark = 3;
+    optional string strretName = 4;
+    optional string description = 5;
+    optional string projectName = 6;
+    optional string developerName = 7;
+}
+
+message Amenity {
+    required int32 aminityId = 1;
+}
+
+message PropertyFile {
+    repeated string images = 1;
+    optional string floorPlans = 2;
+    optional string deed = 3;
+    optional string brochure = 4;
+    optional string attorney = 5;
+    optional string nationality = 6;
+}
+message File {
+    optional string file = 1;
+}
+
+message PropertyParamRequest {
+    required int32 id = 1;
+}
+message PropertyArchiveRequest {
+    required int32 id = 1;
+    required int32 userId = 2;
+}
+message PropertyRenewRequest {
+    required int32 id = 1;
+    required int32 userId = 2;
+}
+message EditPropertyRequest {
+    required int32 id = 1;
+    required int32 userId = 2;
+    required string locale = 3;
+}
+message EditPropertyResponse {
+    optional Error error = 1;
+    optional PropertyData propertyData = 2;
+}
+message PropertyData {
+    required int32 id = 1;
+	required PropertyGeneral generalInfo = 2;
+    required PropertyAttribute attribute = 3;
+    required PropertyLocation location = 4;
+    required PropertyTranslation translation = 5;
+    repeated Amenity amenity = 6;
+    optional PropertyFile file = 7;
+}
+
+message LongJourneyRequest{
+    required string propertyId = 1;
+    required string locale = 2;
+    required string userId = 3;
+}
+
+message LongJourneyFeatureProperty{
+    required string propertyId = 1;
+    required string locale = 2;
+    required string userId = 3;
+}
+
+message PostLongJourneyFeatureProperty{
+    optional string furnishingTypeId = 1;   
+    optional int32 builtUpArea = 2;
+    optional string  Bedroom = 3;
+    optional string  Bathroom = 4;
+    optional string LivingRoom = 5;
+    optional string  GuestRoom = 6;
+    optional string TotalCarParking = 7;
+    optional string PropertyFloor = 8;
+    optional string ApartmentTotalFloor = 9;
+    required string id = 10;
+    required string locale = 11;
+    optional string carpetArea = 12;
+}
+message PostLongJourneyFeaturePropertyResponse {
+      
+        optional string property = 1;
+        optional string message = 2;
+    
+}
+message PostPropertyLongJourneyResponse{
+    required bool status = 1;
+    required string message = 2;
+    optional LongJourneyResponse property = 3;
+}
+
+message LongJourneyResponse {
+    optional string facingTypeId = 1;
+    optional string salePrice = 2;
+    optional string propertyTypeId = 3;
+    optional string buildYear = 4;
+    optional string rentalPrice = 5;
+    optional string possessionTypeId = 6;
+    optional  string mainTypeId = 7;
+    optional string listingTypeId = 8;
+    
+}
+
+message PostPropertyFeatureResponse{
+    optional bool status = 1;
+    optional string message = 2;
+    optional LongJourneyFeaturePropertyResponse property = 3;
+}
+
+message LongJourneyFeaturePropertyResponse {
+    optional string furnishingTypeId = 1;
+    optional LongJourneyLandResponse propertyArea = 2;
+    optional string  Bedroom = 3;
+    optional string  Bathroom = 4;
+    optional string LivingRoom = 5;
+    optional string  GuestRoom = 6;
+    optional string TotalCarParking = 7;
+    optional string PropertyFloor = 8;
+    optional string ApartmentTotalFloor = 9;
+    optional string description = 10;
+    optional string  mainTypeId=11;
+    optional string  propertyTypeId = 12;
+}
+
+message LongJourneyLandResponse{
+    required int32 builtUpArea =1;
+    required int32 carpetArea = 2;
+    optional int32 unitTypeId = 3;
+}
+message LongJourneyAreaResponse{
+    required string unit = 1;
+    required string builtUpArea = 2;
+    required int32 carpetArea = 3;
+}
+
+message LongJourneyStreetResponse {
+    required string noOfStreets = 1;
+    required string street1Width = 2;
+    required string street2Width = 3;
+    required string street3Width = 4;
+    required string street4Width = 5;
+}
+
+message LongJourneyLocationResponse{
+    required string latitude = 1;
+    required string longitude = 2;
+    optional string address = 3;
+}
+
+message LongJourneyPropertyFileResponse{
+    required string id = 1;
+    required string name = 2;
+    required string property_id = 3;
+    required string type = 4;
+}
+
+message AddLongJourneyRequest{
+    required string id = 1;
+    optional string userId = 2;
+    optional string listingTypeId = 3;
+    optional string managedById = 4;
+    optional string facingTypeId = 5;
+    optional string salePrice = 6;
+    optional string mainTypeId = 7;
+    optional string propertyTypeId = 8;
+    optional string possessionTypeId = 9;
+    optional string buildYear = 10;
+    required string locale = 11;
+    optional string rentalPrice = 12;
+    optional string source = 13;
+    optional bool electricityMeter = 14;
+    optional bool waterMeter = 15;
+    optional string street1facing = 16;
+    optional string street2facing = 17;
+    optional string street3facing = 18;
+    optional string street4facing = 19;
+}
+
+message addLongJourneyResponse{
+    optional string error = 1;
+    optional bool status = 2;
+    optional string property = 3;
+    optional string message = 4;
+}
+message addLongJourneyResponseV3{
+    optional string error = 1;
+    optional bool status = 2;
+    optional string property = 3;
+    optional string message = 4;
+}
+
+message GetPropertyRequest{
+    required string id = 1;
+}
+
+message GetPropertyResponse{
+    optional string propertyId = 1;
+}
+
+message GetPostPropertyRequest {
+    required int32 userId = 1;
+    optional int32 limit = 2;
+    optional int32 offset = 3;
+    required int32 statusTypeId = 4;
+    optional string keyword = 5;
+    optional int32 typeId = 6;
+    optional int32 bedrooms = 7;
+    optional int32 bathrooms = 8;
+    optional int32 cityId = 9;
+    repeated int32 agentId = 10;
+    required string locale = 11;
+    required string subStatusTypeId = 12;
+    optional bool isVerified = 13;
+    optional int32 version = 14;
+    optional bool is_ambassador_app = 15;
+    optional int32 listingTypeId = 16;
+}
+
+message GetPostPropertyResponse {
+    optional Error error = 1;
+    required int32 count = 2;
+    repeated UserProperty data = 3;
+    repeated PropertyStatusResult headers = 4;
+    
+}
+
+message UserProperty {
+    message Attributes {
+          string key = 1;
+          string name = 2;
+          uint32 value = 3;
+          string image = 4;
+          string unit = 5;
+          string iconClass = 6;
+      }
+    required int32 id = 1;
+    optional string title = 2;
+    optional string slug = 3;
+    optional string publishedAt = 4; 
+    optional string createdAt = 5; 
+    optional int32 expiryDate = 6; 
+    optional UserPropertyGeneral general = 7;
+    optional UserPropertyAttribute attribute = 8;
+    optional UserInfo userInfo = 9;
+    repeated UserPropertyFile userPropertyFiles = 10;
+    optional string address = 11;
+    optional string updatedAt = 12;
+    optional string postPropertyId = 13;  
+    repeated Attributes attributes = 14;
+    optional string serverTime = 15;
+    optional string disableTime = 16;
+}
+
+message UserPropertyGeneral {
+    optional string propertyStatusType = 1;
+    optional string source = 2; 
+    optional string propertyMainType = 3;
+    optional string external360Link = 4;
+    optional string externalVideoUrl = 5;
+    optional int32 sourceTypeId = 6;
+    optional string propertyRegionType = 7; 
+    optional int32 propertyRegionTypeId = 8; 
+    optional int32 propertyStatusTypeId = 9;
+    optional int32 propertyTypeId = 10;
+    optional int32 listingTypeId = 11;
+    optional string darReference = 12;
+    optional UserPropertyStatus status = 13;
+    optional string propertyType = 14;
+    optional int32 managedById = 15;
+    optional int32 postedAs = 16;
+    optional string enSlug = 17;
+    optional string arSlug = 18;
+    optional int32 subStatusTypeId = 19;
+    optional bool isPopularCity = 20;  
+    optional string occupiedDays =21;
+}
+
+message UserPropertyAttribute {
+    optional int32 noOfBedrooms = 1;
+    optional int32 noOfBathrooms = 2;
+    optional UserPropertyAreaAttribute area = 3;
+    optional UserPropertyPriceAttribute price = 4;
+    optional string buildYear = 5;
+}
+
+message UserPropertyAreaAttribute {
+    optional string propertyUnitType = 1;
+    optional int32 builtUpArea = 2;
+    optional int32 carpetArea = 3;
+}
+
+message UserPropertyPriceAttribute {
+    optional string propertyCurrencyType = 1;
+    optional double salePrice = 2;
+    optional double expectedRent = 3;
+    optional double yearlyCharges = 4;
+}
+
+message UserInfo {
+    message Subuser {
+      optional string id = 1; 
+      optional string fullName = 2; 
+    }
+    optional string userId = 1;
+    optional string role = 2; 
+    optional string fullName = 3;
+    repeated int32 permissions = 4;
+    optional Subuser subuser = 5;
+    optional string phoneNumber = 6;
+    optional string phoneNumberCountryCode = 7;
+}
+
+message UserPropertyFile {
+    optional string name = 1; 
+}
+
+message UserPropertyStatus {
+    optional bool isSold = 1;
+    optional bool isHotDeal = 2;
+    optional bool isExclusive = 3;
+    optional bool isInspected = 4;
+    optional bool isFeatured = 5;
+    optional bool isRecommended = 6;
+    optional string reason = 7; 
+    optional bool isGreatPrice = 8;
+    optional string reasonDate = 9; 
+    optional bool isVerified = 10;
+}
+
+message PostPropertyStatusCountRequest{
+    required int32 userId = 1;
+    repeated int32 agentId = 2;
+    required int32 statusTypeId = 3;
+    string locale = 4;
+    optional bool isVerified = 5;
+}
+
+message PostPropertyStatusCountResponse {
+    optional Error error = 1;
+    repeated PropertyStatusResult headers = 2;
+}
+
+message PropertyStatusResult {
+    required int32 statusTypeId  = 1;
+    required string statusType  = 2;
+    required int32 count  = 3;
+    required bool active  = 4;
+}
+
+message PostPropertyUpdateStatusRequest{
+    required string userId = 1;
+    required string action = 2;
+    required string propertyId = 3 ;
+}
+
+message PostPropertyUpdateStatusResponse{
+    optional string error = 1;
+    optional string data = 2; 
+    optional string message = 3;   
+}
+
+message AssignedRequest {
+    required string userId = 1;
+    required string propertyId = 2;
+    required string subuserId = 3 ;
+}
+
+message AssignedStatusResponse {
+   
+    message Data {
+        string status = 1;
+        uint32 statusTypeId = 2;
+    }
+
+    optional Error error = 1;
+    optional Data data = 2;
+}
+
+message addPropertyPhotosAndVideoReq {
+    optional int64 id = 1;
+    repeated addPropertyFilesArrayRes PropertyFiles = 2;
+    optional string videoURL = 3;
+    required int64 userId = 4;
+    optional int64 addedBy = 5;
+    optional int64 roleId = 6;
+}
+
+message addPropertyPhotosAndVideoRes {
+    optional bool status = 1;
+    optional addPropertyFilesDataRes data = 2;
+    optional string message = 3;
+}
+
+message addPropertyFilesDataRes {
+    optional int64 id = 1;
+    repeated addPropertyFilesArrayRes PropertyFiles = 2;
+}
+
+message addPropertyFilesArrayRes {
+    optional int64 id = 1 ;
+    optional string name = 2;
+    optional int64 property_id = 3;
+    optional string type = 4 ;
+}
+
+message getPropertyPhotosAndVideoReq {
+    required int64 id = 1;
+    required int64 userId = 2;
+    optional string locale = 3;
+}
+
+message getPropertyPhotosAndVideoRes {
+    optional bool status = 1;
+    optional PropertyFilesResType data = 2;
+    optional string message = 3;
+}
+
+message PropertyFilesResType {
+    optional int64 id = 1;
+    repeated PropertyPhotos PropertyFiles = 2;
+    optional string videoURL = 3;
+}
+
+message PropertyPhotos {
+    optional string id = 1;
+    optional string name = 2;
+    optional string property_id = 3;
+    optional string type = 4;
+}
+
+message savePropertyBasicDetailsReq{
+    int32 userId = 1;
+    int32 id = 2;
+    int32 cityId = 3;
+    int32 listingTypeId = 4;
+    int32 roleId = 5;
+    int32 subUserId = 6;
+    string source=7;
+    optional int32 districtId = 8;
+    optional int32 addedBy = 9;
+    optional int32 deedId = 10;
+    optional bool is_ambassador_app = 11;
+}
+
+message savePropertyBasicDetailsRes{
+    Error error = 1;
+    int32 id = 2;
+}
+
+
+message getPropertyBasicDetailsReq{
+    int32 userId = 1;
+    int32 id = 2;
+}
+
+message getPropertyBasicDetailsRes{
+    Error error = 1;
+    int32 id = 2;
+    int32 cityId = 3;
+    int32 listingTypeId = 4;
+    optional int32 districtId = 5;
+}
+
+message getAmenitiesReq {
+    required int64 id = 1;
+    required int64 userId = 2;
+    optional string locale = 3;
+}
+
+message getAmenitiesRes {
+    optional bool status = 1;
+    optional getAmenitiesDataRes data = 2;
+    optional string message = 3;
+}
+
+message getAmenitiesDataRes {
+    optional int64 id = 1;
+    repeated int64 selectedAmenities = 2;
+    repeated allAmentiesData amenities = 3;    
+}
+
+message allAmentiesData {
+    optional int64 id = 1;
+    optional amenitiesInLocale name = 2;
+}
+
+message amenitiesInLocale {
+    optional string en = 1;
+    optional string ar = 2;
+}
+
+message propertyHolderVerificationReq {
+    string idType = 1;
+    string idNumber = 2;
+    string deedNumber = 3;
+    string regaAuthNumber = 4;
+    int32 id = 5;
+    int32 userId = 6;
+    bool isWathqVerified = 7;
+    int32 realestateDeedId = 8;
+    bool validReq = 9;
+}
+
+message propertyHolderVerificationRes {
+    Error error = 1;
+    int32 id = 2;
+    bool isVerified = 3;
+}
+
+message getPropertyHolderVerificationReq {
+    int32 id = 1;
+    int32 userId = 2;
+}
+
+message getPropertyHolderVerificationRes {
+    Error error = 1;
+    string idType = 2;
+    string idNumber = 3;
+    string deedNumber = 4;
+    string regaAuthNumber = 5;
+    int32 id = 6;
+    bool isVerified = 7;
+}    
+
+message getPropertyHolderVerificationV3Req {
+    int32 id = 1;
+    int32 userId = 2;
+}
+
+message getPropertyHolderVerificationV3Res {
+    Error error = 1;
+    string idType = 2;
+    string idNumber = 3;
+    string deedNumber = 4;
+    string regaAuthNumber = 5;
+    int32 id = 6;
+    bool isVerified = 7;
+    required bool isCondtrained = 8;
+    required bool isHalt = 9;
+    required bool isPawned = 10;
+    required bool isTestament = 11;
+}    
+
+message addAmenitiesReq {
+    required int64 id = 1;
+    repeated int64 selectedAmenities =2;
+    required int64 userId = 3;
+    optional string locale = 4;
+}
+
+message addAmenitiesRes {
+    optional bool status = 1;
+    optional addAmenitiesDataRes data = 2;
+    optional string message = 3;   
+}
+
+message addAmenitiesDataRes {
+    optional int64 id = 1;
+    optional string referenceNo = 2;
+}
+
+message getAssigneeDetailsReq {
+    required int64 id = 1;
+    required int64 userId = 2;
+    optional string locale = 3;   
+}
+
+message getAssigneeDetailsRes {
+    optional bool status = 1;
+    optional getAssigneeDetailsDataRes data = 2;
+    optional string message = 3;
+    Error error = 4;
+}
+
+message getAssigneeDetailsDataRes {
+    optional int64 propertyId = 1;
+    optional int64 assigneeId = 2;
+    optional int64 phoneNumber = 3;
+    optional string phoneNumberCountryCode = 4;
+    optional string name = 5;
+    optional string referenceNo = 6;
+    required bool isVerified = 7;
+    optional int32 listingTypeId = 8;
+}
+
+message savePropertyLocationReq {
+    int32 id = 1;
+    int32 userId = 2;
+    string address = 3;
+    string districtId = 4;
+    string lat = 5;
+    string long = 6;
+}
+
+message savePropertyLocationRes {
+    Error error = 1;
+    int32 id = 6;
+}
+
+message getPropertyLocationReq {
+    int32 userId = 1;
+    int32 id = 6;
+}
+
+message getPropertyLocationRes {
+    Error error = 1;
+    int32 id = 2;
+    string address = 3;
+    string districtId = 4;
+    string lat = 5;
+    string long = 6;
+}
+
+message removeSubUserFromPropertiesReq {
+    required int32 subUserId =1;
+}
+
+
+message removeSubUserFromPropertiesRes {
+    optional Error error = 1;
+    optional removeSubUserFromPropertiesData data = 2;
+}
+
+message removeSubUserFromPropertiesData {
+    repeated int32 propertyIds = 1;
+}
+
+message editAssigneeDetailsReq {
+    required int64 id = 1;
+    required int64 userId = 2;
+    required string locale = 3;
+    optional int64 propertyId = 4;
+    optional string assigneeName = 5;
+    optional int64 assigneeMobile = 6;
+    optional string assigneeCountryCode = 7;  
+}
+
+message editAssigneeDetailsRes {
+    optional bool status = 1;
+    optional string message = 2;
+    optional string createdUserId = 3;
+}
+
+message statusRequest {}
+
+message statusResponse {
+    string message = 1;
+}
+
+message getPropertyStepDataReq {
+    int32 userId = 1;
+    required int32 postPropertyId =2;
+    required string locale = 3;
+    required string roleId = 4; 
+    optional int32 version = 5;
+}
+
+message assignPropertyToQCReq {
+    int32 id = 1;
+    required int32 userId =2;
+    required string locale = 3; 
+    required int32 roleId = 4;
+}
+
+message getPropertyPreviewDataReq {
+    int32 userId = 1;
+    required int32 id =2;
+    required string locale = 3; 
+}
+
+message PropertyPreview {
+    optional string sellerName = 1;
+    optional string sellerEmail = 2;
+    optional string sellerMobile = 3;
+    optional string sellerCountryCode = 4;
+    optional string sellerType = 5;
+    optional string nationalId = 6;
+    optional string titleDeedNo = 7;
+    optional string title = 8;
+    optional string cityName = 9;
+    optional string zoneName = 10;
+    optional string address = 11;
+    optional string possessionType = 12;
+    optional string propertyPossesionStatusIcon = 13;
+    optional string waterMeter = 14;
+    optional string electricity = 15;
+    optional string carpetArea = 16;
+    optional string builtUpArea = 17;
+    optional string noOfStreet = 18;
+    optional string  phoneNumberIcon = 19;
+    optional string  emailIcon = 20;
+    optional string  priceIcon = 21;
+    repeated streetInfoReq streetInfo = 22;
+    optional string noOfBedrooms = 23;
+    optional string bedroomIcon = 24;
+    optional string noOfBathroom = 25;
+    optional string bathroomIcon = 26;
+    optional string  profileIcon = 27;
+    optional string furnishingType = 28;
+    optional string furnishingTypeIcon = 29;
+    optional string noOfApartments = 30;
+    optional string noOfOffice = 31;
+    optional string noOfParkings = 32;
+    optional string noOfPalmTrees = 33;
+    optional string noOfWaterWells = 34;
+    optional string  furnishingIcon = 35;
+    optional string residenceType = 36;
+    optional string totalFloors = 37;
+    optional string  propertyStatusIcon = 38;
+    optional string salePrice = 39;
+    optional string rentalPrice = 40;
+    repeated AmenityData amenities = 41;
+    repeated addPropertyFilesArrayRes images = 42;
+    optional string videoUrl = 43;
+    optional string titleIcon = 44;
+    optional string locationIcon = 45;
+    optional string listingType = 46;
+    optional string propertyType = 47;
+    optional string mainType = 48;
+    optional string waterMeterIcon = 49;
+    optional string electricityMeterIcon = 50;
+    optional string verificationDocIcon = 51;
+}
+
+message AmenityData {
+    optional string name = 1;
+    optional string icon = 2;
+    optional string iconClass = 3;
+}
+
+message getPropertyPreviewDataRes {
+    optional Error error = 1;
+    optional PropertyPreview data = 2;
+}
+
+message addPropertyTranslationReq {
+    int32 id = 1;
+    optional Translation enTranslation = 2;
+    optional Translation arTranslation = 3;
+}
+
+message getPropertyStepResData {
+        optional string listingTypeId = 1;
+        optional string cityId = 2;
+        optional int32 titleDeedNo = 3;
+        optional int32 latitude = 4;
+        optional int32 longitude = 5;
+        optional string address = 6;
+        optional string identity  = 7;
+        optional string identityNumber = 8;
+        optional int32 facingId = 9;
+        optional int32 builtUpArea = 10;
+        optional int32 noOfBedrooms = 11;
+        optional int32 noOfBathrooms = 12;
+        optional int32 noOfLivingrooms = 13;
+        optional int32 noOfGuestrooms = 14;
+        optional int32 noOfParkings = 15;
+        optional int32 noOfFloors = 16;
+        optional int32 floorNumber = 17;
+        optional int32 filesCount  = 18;
+        optional int32 amenitiesCount = 19;
+        optional string description = 20;
+        optional string title = 21;
+        optional int32 propertyTypeId= 22;
+        optional bool skipPropertyFilesCheck = 23;
+        optional bool isVerified = 24;
+        optional int32 authType= 25;
+}
+
+message getPropertyBasicDetailsByIdData {
+    int32 id = 1;
+    int64 createdDate = 2;
+}
+
+message getPropertyBasicDetailsByIdReq{
+    int64 id = 1;
+}
+
+message getPropertyBasicDetailsByIdRes{
+    optional Error error = 1;
+    optional getPropertyBasicDetailsByIdData data = 2;
+}
+
+message getPropertyApprovedDateReq {
+    optional int64 id = 1;
+}
+
+message getPropertyApprovedDateRes {
+    optional Error error = 1;
+    optional string data = 2;
+}
+
+message getCompanyNameDetailReq {
+  int64 id = 1;
+}
+
+message  getCompanyNameDetailRes {
+    optional bool status = 1;
+    optional getCompanyDataRes data = 2;
+    optional string message = 3;
+     optional Error error = 4;
+}
+message getCompanyDataRes{
+    optional string companyName = 1;
+    optional bool isVerified = 2;
+}
+
+
+
+message saveCompanyDetailReq{
+    string companyName = 1;
+    int64 id = 2;
+}
+
+message  saveCompanyDetailRes {
+    optional bool status = 1;
+    optional saveCompanyDataRes data = 2;
+    optional string message = 3;
+     optional Error error = 4;
+}
+message saveCompanyDataRes{
+    optional string companyName = 1;
+    optional bool isVerified = 2;
+}
+message listingUserVerificationReq {
+    int32 userId=1;
+    int32 roleId=2;
+    string identityNumber=4;
+    string number=5;
+    string capacity=6;
+    string adNumber=7;
+    string locale= 8;
+}
+
+message listingUserVerificationRes {
+    Error error = 1;
+    string number= 2;
+    string capacity= 3;
+    int32 userId= 4;
+    string identityNumber= 5;
+    string adNumber= 6;
+    bool isVerified= 7;
+    int32 listingRoleId = 8;
+    string companyName = 9;
+}
+
+
+message getListingUserVerificationReq {
+    int32 userId = 1;
+    string locale = 2;
+}
+
+message getListingUserVerificationRes {
+    Error error = 1;
+    string number= 2;
+    string capacity= 3;
+    int32 userId= 4;
+    string identityNumber= 5;
+    string adNumber= 6;
+    bool isVerified= 7;
+    int32 listingRoleId = 8;
+    string companyName = 9;
+}
+
+
+message wathqCrDetailsReq {
+    string crNumber = 1;
+}
+
+message wathqCrDetailsRes {
+    string companyName = 1;
+    bool isVerified = 2;
+    Error error = 3;
+}
+
+message postPropertyAuthorizationUploadReq {
+   optional int64 id = 1;
+   required int64 propertyId = 2;
+   optional int32 authType = 3;
+   repeated string RegaFiles = 4;
+   bool authDraft = 5;
+   required string userId = 6;
+}
+
+message postPropertyAuthorizationUploadRes {
+    optional bool status = 1;
+    optional string message = 2;   
+}
+
+message saveRegaAuthDetailsReq {
+    int32 id = 1;
+    int32 userId = 2;
+    string locale = 3;
+    string regaAuthNumber = 4;
+    int32 authType = 5;
+    bool authDraft = 6;
+}
+
+message saveRegaAuthDetailsRes {
+    Error error = 1;
+    string regaAuthNumber = 2;
+    bool isVerified = 3;
+}
+
+
+message  getPostPropertyAuthorizationReq {
+    int32 id = 1;
+    int32 userId = 2;
+    string locale = 3;
+}
+
+message getPostPropertyAuthorizationRes {
+    string regaAuthNumber = 4;
+    int32 authType = 5;
+    repeated RegaFiles RegaFiles = 6;
+    Error error = 7;
+    optional int32 listingTypeId = 8;
+}
+
+message RegaFiles {
+    int32 id = 1;
+    string name = 2;
+    int32 property_id = 3;
+    string type = 4;
+}
+
+message getPropertyIdReq {
+    int32 id = 1;
+}
+
+message getPropertyIdRes {
+    int32 propertyId = 1;
+}
+
+message PropertyIdsRequest{
+    repeated int32 propertyIds = 1;
+}
+
+message PropertyFilesResponse{
+    repeated PropertyFiles data = 1;
+}
+
+message PropertyFiles{
+    string id = 1;
+    string name = 2;
+    string property_id = 3;
+    string type = 4;
+    bool selected = 5;
+}
+
+message wathqDeedVerificationReq {
+    string Deedcode = 1;
+    string OwnerId = 2;
+    string Idtype = 3;
+}
+
+message wathqDeedVerificationRes {
+    Error error = 1;
+    string status = 2;
+    string data = 3;
+    string message = 4;
+}
+
+message regaAdVerificationReq {
+    string identityNumber = 1;
+    string number = 2;
+    string adNumber = 3;
+    string locale = 4;
+}
+
+message regaAdVerificationRes {
+    Error error = 1;
+    string status = 2;
+    bool data = 3;
+    string message = 5;
+}
+
+message addLongJourneyRequestV3{
+    required string id = 1;
+    optional string userId = 2;
+    optional string listingTypeId = 3;
+    optional string managedById = 4;
+    optional string facingTypeId = 5;
+    optional string salePrice = 6;
+    optional string mainTypeId = 7;
+    optional string propertyTypeId = 8;
+    optional string possessionTypeId = 9;
+    optional string buildYear = 10;
+    required string locale = 11;
+    optional string rentalPrice = 12;
+    optional string source = 13;
+    optional string builtUpArea = 14;
+    optional string carpetArea = 15;
+    repeated  streetInfoReq streetInfo = 16;
+    optional bool waterMeter = 17;
+    optional bool electricityMeter = 18;
+    optional bool residenceTypeId = 19;
+}
+message streetInfoReq {
+    optional string facingTypeId = 1;
+    optional string streetWidth =2;
+    optional string position = 3;
+    optional string facingType = 4;
+    optional string facingTypeIcon = 5;
+}
+
+message longJourneyRequestV3{
+    required string propertyId = 1;
+    required string locale = 2;
+    required string userId = 3;
+}
+
+message postPropertyLongJourneyResponseV3{
+    required bool status = 1;
+    required string message = 2;
+    optional longJourneyResponseV3 property = 3;
+}
+
+message longJourneyResponseV3 {
+    optional string facingTypeId = 1;
+    optional string salePrice = 2;
+    optional string propertyTypeId = 3;
+    optional string buildYear = 4;
+    optional string rentalPrice = 5;
+    optional string possessionTypeId = 6;
+    optional  string mainTypeId = 7;
+    optional string listingTypeId = 8;
+    optional longJourneyAreaResponseV3 propertyArea = 9;
+    required bool  isTestament  = 10;
+    required bool isPawned = 11;
+    required bool isHalt =12;
+    required bool isCondtrained =13;
+    optional bool waterMeter =14;
+    optional bool electricityMeter =15 ;
+    repeated  streetInfoRes streetInfo = 16; 
+    optional bool residenceTypeId = 17;
+}
+
+message longJourneyAreaResponseV3{
+    required string unitTypeId = 1;
+    required string builtUpArea = 2;
+    required int32 carpetArea = 3;
+}
+message streetInfoRes {
+    optional string facingTypeId = 1;
+    optional string streetWidth =2;
+    optional string position = 3;
+}
+
+message postLongJourneyFeaturePropertyV3{
+    required string furnishingTypeId = 1;   
+    required int32 noOfApartments = 2;
+    required string  Bedroom = 3;
+    required string  Bathroom = 4;
+    required string LivingRoom = 5;
+    required string  GuestRoom = 6;
+    required string TotalCarParking = 7;
+    required string PropertyFloor = 8;
+    required string ApartmentTotalFloor = 9;
+    required string id = 10;
+    required string locale = 11;
+    optional string noOfOffice = 12;
+    optional string noOfOpening = 13;
+    optional string noOfPalmTrees = 14;
+    optional string noOfWaterWells = 15;
+    optional string landDepth = 16;
+    optional string landLength = 17;
+    optional string residenceTypeId = 18;
+}
+message postLongJourneyFeaturePropertyResponseV3 {
+        optional string property = 1;
+        optional string message = 2;
+}
+
+message longJourneyFeaturePropertyV3{
+    required string propertyId = 1;
+    required string locale = 2;
+    required string userId = 3;
+}
+
+message postPropertyFeatureResponseV3{
+    optional bool status = 1;
+    optional string message = 2;
+    optional longJourneyFeaturePropertyResponseV3 property = 3;
+}
+
+message longJourneyFeaturePropertyResponseV3 {
+    optional string furnishingTypeId = 1;
+    optional string noOfApartments = 2;
+    optional string  Bedroom = 3;
+    optional string  Bathroom = 4;
+    optional string LivingRoom = 5;
+    optional string  GuestRoom = 6;
+    optional string TotalCarParking = 7;
+    optional string PropertyFloor = 8;
+    optional string ApartmentTotalFloor = 9;
+    optional string description = 10;
+    optional string  mainTypeId=11;
+    optional string  propertyTypeId = 12;
+    optional string noOfOffice = 13;
+    optional string noOfOpening = 14;
+    optional string noOfPalmTrees = 15;
+    optional string  noOfWaterWells = 16;
+    optional string  landDepth  = 17;
+    optional string landLength  =18;
+    optional string residenceTypeId = 19;
+}
+
+message addAmenitiesReqV3 {
+    required int64 id = 1;
+    repeated int64 selectedAmenities =2;
+    required int64 userId = 3;
+    optional string locale = 4;
+    optional string title = 5;
+    optional string description = 6;
+}
+
+message addAmenitiesResV3 {
+    optional bool status = 1;
+    optional addAmenitiesDataRes data = 2;
+    optional string message = 3;   
+}
+
+message getAmenitiesReqV3 {
+    required int64 id = 1;
+    required int64 userId = 2;
+    optional string locale = 3;
+}
+
+message getAmenitiesResV3 {
+    optional bool status = 1;
+    optional getAmenitiesDataResV3 data = 2;
+    optional string message = 3;
+}
+
+message getAmenitiesDataResV3 {
+    optional int64 id = 1;
+    repeated int64 selectedAmenities = 2;
+    repeated allAmentiesData amenities = 3;    
+    optional string title = 4;
+    optional string description = 5;
+    optional int32 mainTypeId = 6;
+}
+
+
+message PostPropertyStatusCountRequestV3{
+    required int32 userId = 1;
+    repeated int32 agentId = 2;
+    required int32 statusTypeId = 3;
+    string locale = 4;
+    optional bool isVerified = 5;
+    required string subStatusTypeId = 6;
+}
+
+message getPropertyDetailCompletedOrNotRes {
+    optional bool status = 1;
+    optional string message = 2;
+    optional string error = 3;
+    optional stepResult data = 4;
+    
+}
+message stepResult {
+    optional int32 postPropertyId = 1;
+    optional string currentStep = 2;
+}
+
+message getPropertyDescriptionReq {
+    int32 id = 1;
+    string locale = 2;
+}
+
+message getPropertyDescriptionRes {
+    string description = 1;
+    Error error = 2;
+}
+message getTitleRequest{
+    required int32 id = 1;
+    required string locale = 2;
+}
+
+message getTitleResponse {
+    optional bool status = 1;
+    optional string message = 2;
+    optional string data = 3;
+}
+
+message markPropertyOccupiedReq {
+    required int32 id = 1;
+    required string userId = 2;
+    required string locale = 3;
+}
+
+message markPropertyOccupiedRes {
+    optional bool status = 1;
+    optional string message = 2;
+    optional string data = 3;
+}
+
+message getSubuserPropertiesReq{
+    required string subUserId = 1;
+    required string locale = 2;
+}
+
+message getSubuserPropertiesRes{
+    optional string error = 1;
+    optional bool data  = 2; 
+}
+
+message getPropertyStepDataRes{
+    required string status = 1;
+    optional StepDataRes data = 2;
+    optional string message = 3;
+}
+
+message StepDataRes{
+    repeated stepResultObj stepResponse = 1;
+    optional string id = 2;
+    optional string currentStep = 3;
+}
+
+message stepResultObj {
+    required string step = 1;
+    required bool isValid = 2;
+    optional bool isVerified = 3;
+}
+message getAmbassadorDashboardDataRequest {
+    required int32 roleId = 1;
+    required int32 userId = 2;
+}
+
+message getAmbassadorDashboardDataResponse {
+    optional dashboardData data = 1;
+    Error error = 2;
+}
+
+message dashboardData {
+    optional ListingsCount listingsCount = 1;
+}
+
+message ListingsCount {
+    optional string assigned = 1;
+    optional string pendingByQCTeam = 2;
+    optional string drafts = 3;
+    optional string reAssigned = 4;
+    optional string pendingByPhotographyTeam = 5;
+}

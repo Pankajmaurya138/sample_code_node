@@ -1,0 +1,164 @@
+{
+  "local": {
+    "dialect": "postgres",
+    "database": "db_daao_development",
+    "logging": false,
+    "replication": {
+      "read": [
+        {
+          "host": "wasalt-dev.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+          "username": "postgres",
+          "password": "EC!^bwM7e?"
+        }
+      ],
+      "write": {
+        "host": "wasalt-dev.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+        "username": "postgres",
+        "password": "EC!^bwM7e?"
+      }
+    }
+  },
+  "test": {
+    "dialect": "postgres",
+    "database": "db_daao_development",
+    "logging": false,
+    "replication": {
+      "read": [
+        {
+          "host": "wasalt-dev.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+          "username": "postgres",
+          "password": "EC!^bwM7e?"
+        }
+      ],
+      "write": {
+        "host": "wasalt-dev.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+        "username": "postgres",
+        "password": "EC!^bwM7e?"
+      }
+    }
+  },
+  "development": {
+    "dialect": "postgres",
+    "database": "db_daao_development",
+    "logging": false,
+    "replication": {
+      "read": [
+        {
+          "host": "wasalt-dev.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+          "username": "postgres",
+          "password": "EC!^bwM7e?"
+        }
+      ],
+      "write": {
+        "host": "wasalt-dev.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+        "username": "postgres",
+        "password": "EC!^bwM7e?"
+      }
+    }
+  },
+  "development3": {
+    "dialect":"postgres",
+    "database": "db_daao_development",
+    "host": "wasalt-dev3.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+    "logging": false,
+    "username": "postgres",
+    "password": "EC!^bwM7e?"
+  },
+  "development2": {
+    "dialect": "postgres",
+    "database": "db_daao_development",
+    "logging": false,
+    "replication": {
+      "read": [
+        {
+          "host": "wasalt-dev2.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+          "username": "postgres",
+          "password": "EC!^bwM7e?"
+        }
+      ],
+      "write": {
+        "host": "wasalt-dev2.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+        "username": "postgres",
+        "password": "EC!^bwM7e?"
+      }
+    }
+  },
+  "preprod": {
+    "username": "postgres",
+    "password": "EC!^bwM7e?",
+    "database": "db_wasalt_preprod",
+    "host": "wasalt-preprod.cpl8cgexb0us.eu-west-1.rds.amazonaws.com",
+    "dialect": "postgres",
+    "logging": false
+  },
+  "preprod2": {
+    "dialect": "postgres",
+    "database": "db_wasalt_preprod",
+    "logging": false,
+    "replication": {
+      "read": [
+        {
+          "host": "wasalt-preprod2.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+          "username": "postgres",
+          "password": "EC!^bwM7e?"
+        }
+      ],
+      "write": {
+        "host": "wasalt-preprod2.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+        "username": "postgres",
+        "password": "EC!^bwM7e?"
+      }
+    }
+  },
+  "preprod3": {
+    "username": "postgres",
+    "password": "EC!^bwM7e?",
+    "database": "db_wasalt_preprod",
+    "host": "wasalt-preprod3.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+    "dialect": "postgres",
+    "logging": false
+  },
+  "qa": {
+    "dialect": "postgres",
+    "database": "db_daao_development",
+    "logging": false,
+    "host": "wasalt-qa.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+    "username": "postgres",
+    "password": "EC!^bwM7e?"
+  },
+  "qa2": {
+    "dialect": "postgres",
+    "database": "db_daao_development",
+    "logging": false,
+    "host": "wasalt-qa2.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+    "username": "postgres",
+    "password": "EC!^bwM7e?"
+  },
+  "qa3": {
+    "dialect": "postgres",
+    "database": "db_daao_development",
+    "logging": false,
+    "host": "wasalt-qa3.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+    "username": "postgres",
+    "password": "EC!^bwM7e?"
+  },
+  "production": {
+    "dialect": "postgres",
+    "database": "db_wasalt_production",
+    "logging": false,
+    "replication": {
+      "read": [
+        {
+          "host": "wasalt-prod-read-replica.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+          "username": "wasalt_production_user",
+          "password": "RDycABoBa89OzEZ3nqNH"
+        }
+      ],
+      "write": {
+        "host": "wasalt-prod.cu6kjkp1tlvh.eu-west-1.rds.amazonaws.com",
+        "username": "wasalt_production_user",
+        "password": "RDycABoBa89OzEZ3nqNH"
+      }
+    }
+  }
+}

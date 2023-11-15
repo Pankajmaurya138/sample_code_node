@@ -1,0 +1,58 @@
+{
+    "local": {
+        "url": "redis://52.208.179.16:6379",
+        "username": "default",
+        "password": "wasalt@1234"
+    },
+    "development": {
+        "url": "redis://52.208.179.16:6379",
+        "username": "default",
+        "password": "wasalt@1234"
+    },
+    "development2": {
+        "url": "redis://54.154.177.46:6379",
+        "username": "default",
+        "password": "wasalt@1234"
+    },
+    "development3": {
+        "url": "redis://3.248.190.243:6379",
+        "username": "default",
+        "password": "wasalt@1234"
+    },
+    "preprod": {
+        "url": "redis://54.194.101.166:6379",
+        "username": "default",
+        "password": "wasalt@1234"
+    },
+    "production": {
+        "url": "redis://54.72.160.68:6379",
+        "username": "default",
+        "password": "wasalt@1234"
+    },
+    "preprod2": {
+        "url": "redis://34.244.122.157:6379",
+        "username": "default",
+        "password": "wasalt@1234"
+    },
+    "preprod3": {
+        "url": "redis://3.249.129.135:6379",
+        "username": "default",
+        "password": "wasalt@1234"
+    },
+    "qa": {
+        "url": "redis://34.255.214.105:6379",
+        "username": "default",
+        "password": "wasalt@1234"
+    },   
+    "qa2": {
+        "url": "redis://52.208.85.165:6379",
+        "username": "default",
+        "password": "wasalt@1234"
+    },
+    "qa3": {
+        "url": "redis://54.195.215.207:6379",
+        "username": "default",
+        "password": "wasalt@1234"
+    }
+    
+}

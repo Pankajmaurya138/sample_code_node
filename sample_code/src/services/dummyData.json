@@ -1,0 +1,476 @@
+{
+    "pData": {
+        "id": "20848",
+        "propertyRegionId": "56",
+        "statusTypeId": "501",
+        "listingTypeId": "3",
+        "subuser_id": "6799",
+        "managedById": "55",
+        "mainTypeId": "2",
+        "propertyTypeId": "39",
+        "userId": "5712",
+        "developerId": null,
+        "projectId": null,
+        "addedBy": "5712",
+        "optionTypeId": null,
+        "sourceTypeId": "580",
+        "darReference": "5712-SAU-BU-423627",
+        "unitReference": "5712-82bf2e15-4a44-4eb2-917f-2e58e9391dac",
+        "source": null,
+        "externalUrl": null,
+        "external_360_link": "",
+        "external_video_link": "",
+        "isSold": false,
+        "isAlreadyLeased": false,
+        "isHotDeal": false,
+        "isExclusive": false,
+        "isFeatured": false,
+        "isInspected": false,
+        "slug": "de7b5343-08f2-4a8e-b2ee-4459124a3f48",
+        "createdAt": "2022-04-30T06:59:57.081Z",
+        "publishedAt": "2022-04-30T10:48:08.156Z",
+        "isActive": true,
+        "isWhatsappLater": false,
+        "postPropertyId": "6500",
+        "isRecommended": false,
+        "isAuction": false,
+        "propertyOwnerId": null,
+        "titleDeedNo": null,
+        "postedAs": 11,
+        "isWathqVerified": false,
+        "realestateDeedId": "15",
+        "rega_authorization_id": null,
+        "subuserId": "6799",
+        "propertyVerificationInfoId": "1939",
+        "sourcePlatformTypeId": "93",
+        "successDate": "2022-04-30T10:23:34.785Z",
+        "authType": null,
+        "updatedAt": "2022-05-13T07:57:09.799Z",
+        "deletedAt": null,
+        "UserId": "5712",
+        "DeveloperId": null,
+        "ProjectId": null,
+        "listing_type_id": "3",
+        "property_region_id": "56",
+        "PostPropertyId": "6500",
+        "option_type_id": null,
+        "PropertyVerificationInfoId": "1939",
+        "RealestateDeedId": "15",
+        "PropertyAttribute": {
+            "id": "19284",
+            "propertyId": "20848",
+            "furnishingTypeId": null,
+            "facingTypeId": null,
+            "roomTypeId": null,
+            "unitTypeId": null,
+            "currencyTypeId": "44",
+            "possessionTypeId": "35",
+            "ownershipTypeId": null,
+            "maintenanceChargeCycleId": null,
+            "transactionTypeId": null,
+            "builtUpArea": null,
+            "carpetArea": null,
+            "superBuiltUpArea": null,
+            "residenceTypeId": null,
+            "noOfBedrooms": null,
+            "noOfBathrooms": null,
+            "noOfLivingrooms": null,
+            "noOfGuestrooms": null,
+            "campCapacity": null,
+            "capacityPerRoom": null,
+            "noOfFloors": null,
+            "floorNumber": null,
+            "salePrice": 10000000,
+            "expectedRent": null,
+            "rentCycle": null,
+            "rent_per_sq_feet": null,
+            "securityDepositAmount": null,
+            "maintenanceCharge": null,
+            "monthlyChargeRange": null,
+            "isRentNegotiable": false,
+            "possessionDate": null,
+            "completionYear": "2018",
+            "yearlyCharges": null,
+            "noOfParkings": null,
+            "noOfPalmTrees": null,
+            "noOfWaterWells": null,
+            "noOfApartments": null,
+            "noOfRetailOutlets": null,
+            "leaseContractEndDate": null,
+            "leaseAmount": null,
+            "streetWidth": null,
+            "noOfStreet": null,
+            "street1Width": null,
+            "street2Width": null,
+            "street3Width": null,
+            "street4Width": null,
+            "waterMeter": null,
+            "electricityMeter": null,
+            "noOfOffice": null,
+            "landDepth": null,
+            "landLength": null,
+            "noOfOpening": null,
+            "createdAt": "2022-04-30T06:59:57.089Z",
+            "updatedAt": "2022-05-09T13:19:14.225Z",
+            "furnishing_type_id": null,
+            "residence_type_id": null,
+            "PropertyId": "20848",
+            "residenceType": {
+                "TypeMasterTranslations": [
+                    {
+                        "id": 45,
+                        "type": "residence_type",
+                        "slug": "family",
+                        "isActive": true,
+                        "name": "Family",
+                        "locale": "en"
+                    },
+                    {
+                        "id": 45,
+                        "type": "residence_type",
+                        "slug": "family",
+                        "isActive": true,
+                        "name": "أسرة",
+                        "locale": "ar"
+                    }
+                ]
+            },
+            "furnishingStatus": {
+                "TypeMasterTranslations": []
+            },
+            "unitType": {
+                "TypeMasterTranslations": [
+                    {
+                        "id": 23,
+                        "type": "property_area_unit",
+                        "slug": "square-meter",
+                        "isActive": true,
+                        "name": "SQM",
+                        "locale": "en"
+                    },
+                    {
+                        "id": 23,
+                        "type": "property_area_unit",
+                        "slug": "square-meter",
+                        "isActive": true,
+                        "name": "متر مربع",
+                        "locale": "ar"
+                    }
+                ]
+            },
+            "currencyType": {
+                "TypeMasterTranslations": [
+                    {
+                        "id": 44,
+                        "type": "currencies",
+                        "slug": "sar",
+                        "isActive": true,
+                        "name": "SAR",
+                        "locale": "en"
+                    },
+                    {
+                        "id": 44,
+                        "type": "currencies",
+                        "slug": "sar",
+                        "isActive": true,
+                        "name": "ر.س",
+                        "locale": "ar"
+                    }
+                ]
+            }
+        },
+        "Realestate_deed": {
+            "id": "15",
+            "Deedcode": "720220007600",
+            "OwnerId": "1103838015",
+            "Idtype": "nid",
+            "serialNumber": "2231854",
+            "issueDate": "1434-06-17T00:00:00.000Z",
+            "courtId": "3",
+            "courtName": "كتابة العدل الاولى بجدة",
+            "cityId": "3",
+            "cityName": "جدة",
+            "status": "active",
+            "area": "713.35",
+            "areaText": " سبعمائة و  ثلاثة عشر متر مربعاً و  خمسة و ثلاثون سنتمتراً مربعاً",
+            "note": "أرضا وبناء",
+            "isCondtrained": false,
+            "isHalt": true,
+            "isPawned": false,
+            "isTestament": false,
+            "share": null,
+            "responseData": "{\"owner\":[{\"name\":\"عبدالله بن احمد بن ابراهيم عقيلي\",\"birthDate\":\"1412/05/29\",\"identity\":{\"id\":\"1103838015\",\"type\":\"nid\",\"typeDescription\":\"سجل مدني\"},\"isDead\":false,\"owned\":{\"area\":\"713.35\",\"percentage\":\"100%\"}}],\"border\":[{\"direction\":\"North\",\"limit\":{\"id\":\"4\",\"name\":\"ممر\"},\"length\":\"30.9\",\"lengthText\":\"ثلاثون متر و تسعون سنتمتر\",\"description\":\"عرض 3.30 م ثم جمعان الغامدي ثم ممر 1.70 م ثم ورثة مشني الغامدي\"},{\"direction\":\"East\",\"limit\":{\"id\":\"4\",\"name\":\"ممر\"},\"length\":\"24.75\",\"lengthText\":\"أربعة و عشرون متر و خمسة و سبعون سنتمتر\",\"description\":\"عرض 4.75 م ثم سالم احمد وعبدالله الغامدي\"},{\"direction\":\"West\",\"limit\":{\"id\":\"4\",\"name\":\"ممر\"},\"length\":\"19.55\",\"lengthText\":\"تسعة عشر متر و خمسة و خمسون سنتمتر\",\"description\":\"عرض 1.15 م ثم انقاض الغير\"},{\"direction\":\"South\",\"limit\":{\"id\":\"4\",\"name\":\"ممر\"},\"length\":\"34.5\",\"lengthText\":\"أربعة و ثلاثون متر و خمسون سنتمتر\",\"description\":\"1.40 م ثم انقاض لطفية الصواف ثم ممر 2 م ثم علي الجيزاني\"}],\"realEstate\":[{\"serialNumber\":\"802442\",\"region\":{\"id\":\"4\",\"name\":\"\"},\"type\":\"قطعة الارض\",\"landNumber\":\"بدون\",\"planNumber\":\"لا يوجد مخطط\",\"area\":\"713.35\",\"areaText\":\" سبعمائة و  ثلاثة عشر متر مربعاً و  خمسة و ثلاثون سنتمتراً مربعاً\",\"locationDescription\":\" كامل الدار  المقامة على قطعة الارض  رقم بدون الواقع في حي  الجامعة  بمدينة جدة .\",\"limitDescription\":\"والتي حدودها وأطوالها شمالا ممر  عرض 3.30 م ثم جمعان الغامدي ثم ممر 1.70 م ثم ورثة مشني الغامدي بطول ثلاثون متر و تسعون سنتمتر و جنوبا ممر  1.40 م ثم انقاض لطفية الصواف ثم ممر 2 م ثم علي الجيزاني بطول أربعة و ثلاثون متر و خمسون سنتمتر و شرقا ممر  عرض 4.75 م ثم سالم احمد وعبدالله الغامدي بطول أربعة و عشرون متر و خمسة و سبعون سنتمتر و غربا ممر  عرض 1.15 م ثم انقاض الغير بطول تسعة عشر متر و خمسة و خمسون سنتمتر\",\"neighborhood\":\"الجامعة\",\"remark\":\" \",\"hasLimitAndBorder\":true,\"flatFloorName\":null,\"border\":[{\"direction\":\"North\",\"limit\":{\"id\":\"4\",\"name\":\"ممر\"},\"length\":\"30.9\",\"lengthText\":\"ثلاثون متر و تسعون سنتمتر\",\"description\":\"عرض 3.30 م ثم جمعان الغامدي ثم ممر 1.70 م ثم ورثة مشني الغامدي\"},{\"direction\":\"East\",\"limit\":{\"id\":\"4\",\"name\":\"ممر\"},\"length\":\"24.75\",\"lengthText\":\"أربعة و عشرون متر و خمسة و سبعون سنتمتر\",\"description\":\"عرض 4.75 م ثم سالم احمد وعبدالله الغامدي\"},{\"direction\":\"West\",\"limit\":{\"id\":\"4\",\"name\":\"ممر\"},\"length\":\"19.55\",\"lengthText\":\"تسعة عشر متر و خمسة و خمسون سنتمتر\",\"description\":\"عرض 1.15 م ثم انقاض الغير\"},{\"direction\":\"South\",\"limit\":{\"id\":\"4\",\"name\":\"ممر\"},\"length\":\"34.5\",\"lengthText\":\"أربعة و ثلاثون متر و خمسون سنتمتر\",\"description\":\"1.40 م ثم انقاض لطفية الصواف ثم ممر 2 م ثم علي الجيزاني\"}]}]}",
+            "createdAt": "2022-03-09T09:46:46.040Z",
+            "updatedAt": "2022-03-09T09:46:46.040Z",
+            "deletedAt": null
+        },
+        "Amenities": [
+            {
+                "id": "35",
+                "icon": "walk-in-closet.png",
+                "slug": "walk-in-closet",
+                "is_active": true,
+                "amenity_type_id": "31",
+                "property_main_type_id": "1",
+                "createdAt": "2021-07-16T06:27:21.634Z",
+                "updatedAt": "2021-07-31T16:50:14.709Z",
+                "deletedAt": null,
+                "AmenityProperty": {
+                    "amenityId": "35",
+                    "propertyId": "20848"
+                },
+                "AmenityTranslations": [
+                    {
+                        "id": "67",
+                        "name": "Walk-in Closet",
+                        "locale": "en",
+                        "createdAt": "2021-07-16T06:27:21.637Z",
+                        "updatedAt": "2021-07-16T06:27:21.637Z",
+                        "AmenityId": "35"
+                    },
+                    {
+                        "id": "68",
+                        "name": "غرفة ملابس",
+                        "locale": "ar",
+                        "createdAt": "2021-07-16T06:27:21.640Z",
+                        "updatedAt": "2021-07-31T16:50:14.711Z",
+                        "AmenityId": "35"
+                    }
+                ]
+            },
+            {
+                "id": "34",
+                "icon": "built-in-wardrobes.png",
+                "slug": "built-in-wardrobes",
+                "is_active": true,
+                "amenity_type_id": "32",
+                "property_main_type_id": "1",
+                "createdAt": "2021-07-16T06:25:15.829Z",
+                "updatedAt": "2021-08-06T06:39:10.745Z",
+                "deletedAt": null,
+                "AmenityProperty": {
+                    "amenityId": "34",
+                    "propertyId": "20848"
+                },
+                "AmenityTranslations": [
+                    {
+                        "id": "65",
+                        "name": "Built in Wardrobes",
+                        "locale": "en",
+                        "createdAt": "2021-07-16T06:25:15.832Z",
+                        "updatedAt": "2021-07-16T06:25:15.832Z",
+                        "AmenityId": "34"
+                    },
+                    {
+                        "id": "66",
+                        "name": "خزائن ملابس جدارية",
+                        "locale": "ar",
+                        "createdAt": "2021-07-16T06:25:15.835Z",
+                        "updatedAt": "2021-07-31T17:36:44.698Z",
+                        "AmenityId": "34"
+                    }
+                ]
+            },
+            {
+                "id": "38",
+                "icon": "default_icon.png",
+                "slug": "external-annex",
+                "is_active": true,
+                "amenity_type_id": "31",
+                "property_main_type_id": "1",
+                "createdAt": "2021-07-16T07:01:42.695Z",
+                "updatedAt": "2021-08-06T06:25:13.789Z",
+                "deletedAt": null,
+                "AmenityProperty": {
+                    "amenityId": "38",
+                    "propertyId": "20848"
+                },
+                "AmenityTranslations": [
+                    {
+                        "id": "73",
+                        "name": "External Annex",
+                        "locale": "en",
+                        "createdAt": "2021-07-16T07:01:42.699Z",
+                        "updatedAt": "2021-07-16T07:01:42.699Z",
+                        "AmenityId": "38"
+                    },
+                    {
+                        "id": "74",
+                        "name": "ملحق",
+                        "locale": "ar",
+                        "createdAt": "2021-07-16T07:01:42.702Z",
+                        "updatedAt": "2021-07-31T17:06:39.964Z",
+                        "AmenityId": "38"
+                    }
+                ]
+            },
+            {
+                "id": "39",
+                "icon": "default_icon.png",
+                "slug": "yard",
+                "is_active": true,
+                "amenity_type_id": "31",
+                "property_main_type_id": "1",
+                "createdAt": "2021-07-16T07:02:31.844Z",
+                "updatedAt": "2021-09-09T12:41:53.825Z",
+                "deletedAt": null,
+                "AmenityProperty": {
+                    "amenityId": "39",
+                    "propertyId": "20848"
+                },
+                "AmenityTranslations": [
+                    {
+                        "id": "76",
+                        "name": "حوش",
+                        "locale": "ar",
+                        "createdAt": "2021-07-16T07:02:31.849Z",
+                        "updatedAt": "2021-07-16T07:02:31.849Z",
+                        "AmenityId": "39"
+                    },
+                    {
+                        "id": "75",
+                        "name": "Yard",
+                        "locale": "en",
+                        "createdAt": "2021-07-16T07:02:31.847Z",
+                        "updatedAt": "2021-09-09T12:41:53.827Z",
+                        "AmenityId": "39"
+                    }
+                ]
+            }
+        ],
+        "propertyType": {
+            "id": "39",
+            "parent_id": "2",
+            "slug": "apartment",
+            "code": null,
+            "isActive": true,
+            "createdAt": "2021-06-22T10:53:16.314Z",
+            "updatedAt": "2021-08-09T05:46:50.138Z",
+            "deletedAt": null,
+            "PropertyTypesTranslations": [
+                {
+                    "id": "47",
+                    "property_type_id": "39",
+                    "name": "Apartment",
+                    "description": null,
+                    "locale": "en",
+                    "createdAt": "2021-06-22T10:53:16.325Z",
+                    "updatedAt": "2021-06-22T10:53:16.325Z",
+                    "PropertyTypeId": "39"
+                },
+                {
+                    "id": "48",
+                    "property_type_id": "39",
+                    "name": "شقة",
+                    "description": null,
+                    "locale": "ar",
+                    "createdAt": "2021-06-22T10:53:16.327Z",
+                    "updatedAt": "2021-06-22T10:53:16.327Z",
+                    "PropertyTypeId": "39"
+                }
+            ]
+        },
+        "PropertyLocation": {
+            "id": "19233",
+            "propertyId": "20848",
+            "countryId": "1",
+            "stateId": "25",
+            "cityId": "273",
+            "zoneId": "2114",
+            "landmark": null,
+            "address": "2Nd Industrial City, Riyadh, Saudi Arabia",
+            "latitude": "24.5528561",
+            "longitude": "46.8909013",
+            "createdAt": "2022-04-30T06:59:57.097Z",
+            "updatedAt": "2022-05-09T13:19:14.229Z",
+            "CityId": "273",
+            "ZoneId": "2114",
+            "PropertyId": "20848",
+            "City": {
+                "id": "273",
+                "country_id": "1",
+                "state_id": "25",
+                "slug": "riyadh",
+                "is_active": true,
+                "createdAt": "2021-08-06T14:56:22.224Z",
+                "updatedAt": "2021-08-06T14:56:22.224Z",
+                "deletedAt": null,
+                "CountryId": "1",
+                "CityTranslations": [
+                    {
+                        "id": "494",
+                        "city_id": "273",
+                        "name": "الرياض",
+                        "locale": "ar",
+                        "createdAt": "2021-08-06T14:56:22.564Z",
+                        "updatedAt": "2021-08-06T14:56:22.564Z",
+                        "CityId": "273"
+                    },
+                    {
+                        "id": "493",
+                        "city_id": "273",
+                        "name": "Riyadh",
+                        "locale": "en",
+                        "createdAt": "2021-08-06T14:56:22.394Z",
+                        "updatedAt": "2021-08-06T14:56:22.394Z",
+                        "CityId": "273"
+                    }
+                ]
+            },
+            "Zone": {
+                "id": "2114",
+                "city_id": "273",
+                "slug": "2nd-industrial-city",
+                "post_code": "0",
+                "is_active": true,
+                "createdAt": "2021-08-06T15:27:10.797Z",
+                "updatedAt": "2021-08-06T15:27:10.797Z",
+                "deletedAt": null,
+                "CityId": "273",
+                "ZoneTranslations": [
+                    {
+                        "id": "2563",
+                        "zone_id": "2114",
+                        "name": "2Nd Industrial City",
+                        "locale": "en",
+                        "createdAt": "2021-08-06T15:27:10.999Z",
+                        "updatedAt": "2021-08-06T15:27:10.999Z",
+                        "ZoneId": "2114"
+                    },
+                    {
+                        "id": "2564",
+                        "zone_id": "2114",
+                        "name": "المدينة الصناعية الثانية",
+                        "locale": "ar",
+                        "createdAt": "2021-08-06T15:27:11.203Z",
+                        "updatedAt": "2021-08-06T15:27:11.203Z",
+                        "ZoneId": "2114"
+                    }
+                ]
+            }
+        },
+        "StreetInfos": [],
+        "propertyFor": {
+            "TypeMasterTranslations": [
+                {
+                    "id": 3,
+                    "type": "property_listing_type",
+                    "slug": "sale",
+                    "code": "BU",
+                    "isActive": true,
+                    "name": "Sale",
+                    "locale": "en"
+                },
+                {
+                    "id": 3,
+                    "type": "property_listing_type",
+                    "slug": "sale",
+                    "code": "BU",
+                    "isActive": true,
+                    "name": "بيع",
+                    "locale": "ar"
+                }
+            ]
+        }
+    }
+}

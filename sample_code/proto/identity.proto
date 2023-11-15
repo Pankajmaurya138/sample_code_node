@@ -1,0 +1,1119 @@
+syntax = "proto3";
+// import "types.proto";
+
+// package Service;
+
+service IdentityService {
+    rpc Login (LoginRequest) returns (Response) {};
+    rpc UpdateUserBasicInfo (UpdateUserBasicInfo) returns (Response) {};
+    rpc CheckContactExistence (CheckContactExistenceRequest) returns (Response) {};
+    rpc LoginWithOtp (LoginWithOtpRequest) returns (Response) {};
+    rpc VerifyLoginOtp (UserVerifyPhoneRequest) returns (Response) {};
+    rpc Register (UserRegisterRequest) returns (Response) {};
+    rpc ResendVerficationCode (UserParamRequest) returns (Response) {};
+    rpc ResendWhatsAppVerificationCode (UserParamRequest) returns (Response) {};
+    rpc SetUserIqmaByAbsher  (UserIqmaByAbsher) returns (IqmaResponse) {};
+    rpc UpdatePhoneNumber (UserUpdatePhoneRequest) returns (Response) {};
+    rpc SendOtpToPhone (UserUpdatePhoneRequest) returns (Response) {};
+    rpc UpdateProfilePhoneNumber (ProfilePhoneUpdateRequest) returns (Response) {};
+    
+    rpc VerifyPhoneNumber (UserVerifyPhoneRequest) returns (Response) {};
+
+    rpc SendOtpToWhatsApp (SendOtpToWhatsAppRequest) returns (Response) {};
+    rpc UpdateProfileWhatsAppNumber (UserVerifyWhatsAppRequest) returns (Response) {};
+    rpc VerifyEmailNumber (UserVerifyEmailRequest) returns (Response) {};
+    rpc ForgotPassword (ForgotPasswordRequest) returns (Response) {};
+    rpc ResetPassword (PasswordRequest) returns (Response) {};
+    rpc GetProfileById (UserParamRequest)  returns (ProfileResponse) {};
+    rpc UpdateProfile (UserUpdateRequest)  returns (Response) {};
+    rpc ChangePassword (ChangePasswordRequest)  returns (Response) {};
+    rpc UploadUserContract (UserContractRequest)  returns (UserContractResponse) {};
+    rpc AddAgent (AddAgentRequest)  returns (Response) {};
+    rpc GetAgentForRegister (GetAgentForRegisterRequest)  returns (GetAgentForRegisterResponse) {};
+    rpc AgentRegister (AgentRegisterRequest)  returns (Response) {};
+    rpc GetAllAgents (GetAllAgentsRequest)  returns (GetAllAgentsResponse) {};
+    rpc GetAgents (GetAgentsRequest)  returns (GetAgentsResponse) {};
+    rpc GetAllAgentPermissions (GetAllAgentPermissionsRequest)  returns (GetAllAgentPermissionsResponse) {};
+    rpc AgentChangeStatus (AgentChangeStatusRequest)  returns (Response) {};
+    rpc AgentTransferProperty (AgentTransferPropertyRequest)  returns (AgentTransferPropertyResponse) {};
+    rpc SendMessageToAgent (SendMessageToAgentRequest)  returns (Response) {};
+    rpc UpdateAgentPermission (UpdateAgentPermissionRequest)  returns (Response) {};
+    rpc GetAgentDetail (GetAgentDetailRequest)  returns (GetAgentDetailResponse) {};
+    rpc ResendInvitationPendingStatusAgent (ResendInvitationPendingStatusAgentRequest)  returns (Response) {};
+    rpc DeletePendingStatusAgent (DeletePendingStatusAgentRequest)  returns (Response) {};
+    rpc CheckUserPermission (CheckUserPermissionRequest) returns (CheckUserPermissionResponse) {};
+    rpc VerifyEmail (VerifyEmailRequest) returns (Response) {};
+    rpc UpdateProfileEmail (UserUpdateEmailRequest) returns (Response) {};
+    rpc ResendEmailVerificationCode (UserParamRequest) returns (Response) {};
+    rpc UpdateProfileImage (UpdateProfileImageRequest) returns (Response) {};
+    rpc CheckUserActive (CheckUserActiveRequest) returns (Response) {};
+    rpc SaveDeviceToken (SaveDeviceTokenRequest) returns (BoolResponse) {};
+    rpc GetNotificationsUser (GetNotificationsUserRequest) returns (NotificationsUserResponse) {};
+    rpc ReadNotification (ReadNotificationRequest) returns (BoolResponse) {};
+    rpc GetMessageSubject (GetMessageSubject)  returns (GetMessageSubjectResponse) {};
+    rpc GetConversation (GetConversationRequest) returns (GetConversationResponse) {};
+    rpc ChangeStatusConversation (changeStatusConversationRequest) returns (Response) {};
+    rpc ReplyToConversation (ReplyToConversationRequest) returns (ReplyToConversationResponse) {};
+    rpc GetVerifiedUserById (VerifiedUserRequest) returns (Response) {}
+    rpc UpdateVerifiedUserEmailById (VerifiedUserEmailRequest) returns (Response) {}
+    rpc GetUserPersonalInfo (GetUserPersonalInfoRequest) returns (InfoResponse) {}
+    rpc GetAllSubusers (SubuserFilterRequest)  returns (SubuserFilterResponse) {};
+    rpc GetListingUserDetails (GetListingUserDetailsRequest) returns (GetListingUserDetailsResponse) {}
+    rpc GetParentUserRole (ParentUserRoleRequest) returns (ParentUserRoleResponse) {};
+    rpc isUserRoleValid (isUserRoleValidReq) returns (isUserRoleValidRes) {};
+    rpc saveOwnerRole(saveOwnerRoleRequest) returns (saveOwnerRoleResponse){};
+    rpc manageSubUser(manageSubUserRequest) returns (manageSubUserResponse){};
+    rpc deleteSubUser(deleteSubUserRequest) returns(deleteSubUserResponse) {}
+    rpc getUserPostInfo(getUserPostInfoRequest) returns (getUserPostInfoResponse){};
+    rpc checkPhoneNumber(checkPhoneNumberRequest) returns (checkPhoneNumberResponse){};
+    rpc ping(statusRequest) returns(statusResponse){};
+    rpc checkUserIdentity (CheckContactExistenceRequest) returns (checkUserContactExistenceRes) {};
+    rpc saveBrokerDeveloperRole (saveBrokerDeveloperRoleReq) returns (saveBrokerDeveloperRoleRes) {};
+    rpc saveUserPostInfo (saveUserPostInfoReq) returns (saveUserPostInfoRes) {};
+    rpc updateVerifiedBroker (updateVerifiedBrokerReq) returns (updateVerifiedBrokerRes) {};
+    rpc userPostInfoDetailsbyUserId (userPostInfoDetailsbyUserIdReq) returns (userPostInfoDetailsbyUserIdRes) {};
+    rpc getReviewerWithRoleIdForLocation (getReviewerWithRoleIdForLocationReq) returns (getReviewerWithRoleIdForLocationRes) {};
+}
+message IqmaResponse{
+      optional Error error = 1;
+      optional Iqma user = 2;
+}
+message Iqma {
+    message Userverifiedinfo {
+        uint32 user_id = 1;
+        string gender = 2;
+        string id_version_no = 3;
+        uint32 nationality_id = 4;
+        string exp = 5;
+        string lang = 6;
+        string iat = 7;
+        string jti = 8;
+        string card_issue_date_gregorian = 9;
+        string card_issue_date_hijri = 10;
+        string iqama_expiry_date_gregorian = 11;
+        string iqama_expiry_date_hijri = 12;
+        string id_expiry_date_gregorian = 13;
+        string id_expiry_date_hijri = 14;
+        string dob_hijri = 15;
+        string nbf = 16;
+        string absher_id = 17;
+    }
+
+    uint32 userId = 1;
+    string userid = 2;
+    string gender = 3;
+    string idVersionNo = 4;
+    string nationalityId = 5;
+    string exp = 6;
+    string lang = 7;
+    string iat = 8;
+    string jti = 9;
+    string cardIssueDateGregorian = 10;
+    string cardIssueDateHijri = 11;
+    string iqamaExpiryDateGregorian = 12;
+    string iqamaExpiryDateHijri = 13;
+    string idExpiryDateGregorian = 14;
+    string idExpiryDateHijri = 15;
+    string dobHijri = 16;
+    string nbf = 17;
+    string englishName = 18;
+    string englishFirstName = 19;
+    string englishFatherName = 20;
+    string englishGrandFatherName = 21;
+    string englishFamilyName = 22;
+    string nationality = 23;
+    string issueLocationEn = 24;
+    string arabicName = 25;
+    string arabicFirstName = 26;
+    string arabicFatherName = 27;
+    string arabicGrandFatherName = 28;
+    string arabicFamilyName = 29;
+    string arabicNationality = 30;
+    string issueLocationAr = 31;
+    string locale = 32;
+    Userverifiedinfo UserVerifiedInfo = 33;
+    bool auctionEnabled = 34;
+    bool ksa_citizen = 35;
+    string absher_id = 36;
+}
+message BoolResponse{
+    optional Error error = 1;
+    required bool status = 2;
+}
+
+message Error {
+    optional string message = 1;
+    required string code = 2;
+}
+
+message GetMessageSubjectResponse{    
+    repeated MessageSubejctData data=1;
+    required int32 count = 2;
+}
+message MessageSubejctData{
+    required int32 conversationId = 1;
+    required int32 userId = 2;
+    required int32 statusTypeId = 3;
+    required string subject = 4;
+    required int32 recent_sender_id = 5;
+    required string full_name = 6;  
+    required string updated_at  =7;
+    required bool isRead  =8;
+    required int32 id = 9;
+}
+
+message GetConversationResponse{
+    repeated ConversationData data=1;
+    required int32 count = 2;
+}
+
+
+
+message ConversationData{
+    required int32 id = 1;
+    required int32 conversationMessageId = 2;
+    required int32 userId = 3;
+    required string message = 4;
+    required int32 conversationUserTypeId = 5;
+    required bool isRead = 6;
+    required string full_name = 7;  
+    required string updated_at  =8;  
+    required string attachment = 9;    
+}
+message ReplyToConversationResponse{
+    repeated int32 data=1;
+}
+
+
+message NotificationsUserResponse {
+    optional Error error = 1;
+    repeated notitificationData data = 2;  
+    optional int32 count = 3;
+    optional int32 unreadCount = 4;
+}
+
+message GetMessageSubject{
+    required int32 userId = 1;
+    required int32 limit = 2;
+    required int32 offset = 3;
+    repeated int32 statusTypeId = 4;    
+}
+
+message GetConversationRequest{
+    required int32 conversationId = 1;
+    required int32 userId = 2;
+    required int32 limit = 3;
+    required int32 offset = 4;
+}
+
+message ReplyToConversationRequest{
+    required int32 userId = 1;  
+    required string conversationId = 2;
+    required string message = 3;
+    optional string file = 4;
+}
+
+message changeStatusConversationRequest{
+    required int32 userId = 1;
+    required int32 statusTypeId = 2; 
+    required int32 conversationId = 3;   
+}
+message notitificationData {
+    required int32 id = 1;
+    required int32 receiver_id = 2;
+    required bool is_read = 3;
+    required string title = 4;
+    required int32 event_id = 5;
+    required string event_type = 6;
+    required string message=7;
+    required string createdAt=8;
+    required string event_metadata=9;
+}
+
+message Response {
+    optional Error error = 1;
+    optional User user = 2;
+}
+
+message ProfileResponse {
+    optional Error error = 1;
+    optional ProfileUser user = 2;
+}
+
+message ProfileUser {
+    int32 id = 1;
+    int32 outstandingBalance = 2;
+    int32 totalRentProperties = 3;
+    int32 totalSaleProperties = 4;
+    int32 totalAgents = 5;
+    ProfileContractInfo contractInfo = 6;
+    ProfileGeneralInfo generalInfo = 7;
+    ProfileContactDetail contactDetail = 8;
+    ProfileUserInfo userInfo = 9;
+    PermissionData permissionData = 10;
+    ProfileUserAddress userAddress = 11;
+    ProfileUserBusinessInfo userBusinessInfo = 12;
+}
+
+message ProfileUserAddress {
+    required int32 countryId = 1;
+    required string country = 2;
+}
+message ProfileUserBusinessInfo {
+    required int32 spokenLanguageTypeId = 1;
+    required string spokenLanguageType = 2;
+    required int32 nationalityTypeId = 3;
+    required string nationalityType = 4;
+    required int32 experienceTypeId = 5;
+    required string experienceType = 6;
+    required string logo = 7;
+}
+message PermissionData {
+    repeated int32 permissions = 1;
+    repeated string businessArea = 2;
+    repeated string ksa = 3;
+    repeated string international = 4;
+}
+
+message ProfileContractInfo {
+    required string licenceNumber = 1;
+    required int32 contractRef = 2;
+    required string contractFile = 3;
+    required string contractExpiredAt = 4;
+    required string ipAddress = 5;
+
+}
+
+message ProfileGeneralInfo {
+    required string preferredLanguage = 1;
+    required string preferredTimezone = 2;
+    required bool isSkipVerification = 3;
+}
+
+
+
+message ProfileContactDetail {
+    required string email = 1;
+    required string emailVerifiedAt = 2;
+    required string phoneNumberCountryCode = 3;
+    required int64 phoneNumber = 4;
+    required string phoneVerifiedAt = 5;
+    required string whatsAppNumberCountryCode = 6;
+    required int64 whatsAppNumber = 7;
+    required string  whatsAppVerifiedAt = 8;
+}
+
+message ProfileUserInfo {
+    required string fullName = 1;
+    required string avatar = 2;
+    required string roleNameEn = 3;
+    required string roleNameAr = 4;
+    required int32 roleId = 5;
+    required string workTitleEn = 6;
+    required string workTitleAr = 7;
+    required string bioEn = 8;
+    required string bioAr = 9;
+    required string addressEn = 10;
+    required string addressAr = 11;
+}
+
+message UserContractResponse {
+    optional Error error = 1;
+}
+message UserContractRequest {
+    required int32 userId = 1;
+    repeated UserContract userContract = 2;    
+}
+
+message UserContract {
+    optional string file = 1;
+}
+message User {
+    int32 id = 1;
+    string email = 2;
+    string preferredLanguage = 3;
+    string preferredTimezone = 4;
+    int64 phoneNumber = 5;
+    int64 whatsAppNumber = 6;
+    string phoneNumberCountryCode = 7;
+    string whatsAppNumberCountryCode = 8;
+    string fullName = 9;
+    string licenceNumber = 10;
+    int32 contractRef = 11;
+    string contractFile = 12;
+    string avatar = 13;
+    string roleNameEn = 14;
+    string roleNameAr = 15;
+    bool auctionEnabled = 34;
+    bool ksa_citizen = 35;
+    string absher_id = 36;
+    string englishName = 37;
+    string arabicName = 38;
+    int64 parentId = 39;
+    int64 roleId = 40;
+    string role = 41;
+}
+
+message GetAgentForRegisterResponse {
+    optional Error error = 1;
+    optional AgentForRegisterUser user = 2;
+}
+
+message AgentForRegisterUser {
+    int32 id = 1;
+    string email = 2;
+    string fullName = 3;
+    repeated PermissionsData permissions = 4;
+}
+
+message PermissionsData {
+    string type = 1;
+    repeated string permission = 2;
+}
+
+message UserInfo {
+    string fullName = 1;
+    string licenceNumber = 2;
+    int32 contractRef = 3;
+    string contractFile = 4;
+    string avatar = 5;
+    string ipAsddress = 6;
+    string ipAddress = 7;
+}
+
+message LoginRequest {
+    required string userIdentity = 1;
+    required string password = 2;
+}
+
+message LoginWithOtpRequest {
+    required string phoneNumberCountryCode = 1;
+    required string phoneNumber = 2;
+}
+
+message CheckContactExistenceRequest {
+    required string phoneNumberCountryCode = 1;
+    required string phoneNumber = 2;
+    required string roleId= 3;
+    required string locale = 4;
+}
+
+message UserRegisterRequest {
+    required int32 roleId = 1;
+    required string fullName = 2;
+    required string phoneNumber = 3;
+    required string phoneNumberCountryCode = 4;
+    optional string whatsAppNumber = 5;
+    optional string whatsAppNumberCountryCode = 6;
+    optional string email = 7;
+    optional string password = 8;
+    optional string preferredLanguage = 9;
+    optional string utmJson = 10;
+    optional UserRequestInfo UserInfo = 11;
+    optional UserRequestAddress UserAddress = 12;
+}
+
+message UserInfoRequest {
+    required string fullName = 1;
+    optional string licenceNumber = 2;
+}
+message UserRequestInfo {
+    required string fullName = 1;
+    optional string licenceNumber = 2;
+    optional int32 contractRef = 3;
+    optional string contractFile = 4;
+    optional string avatar = 5;
+    optional string ipAddress = 6;
+}
+
+message UserRequestAddress {
+    required int32 countryId = 1;
+}
+
+message UserUpdateRequest {
+    required int32 id = 1;
+    optional string preferredLanguage = 2;
+    required UserInfoRequest userInfo = 3;
+    optional userTranslationRequest userTranslation = 4;
+    optional userBusinessInfoRequest userBusinessInfo = 5;
+    optional UserAddressRequest userAddress = 6;
+    
+}
+message UserAddressRequest {
+    optional int32 countryId = 1;
+}
+message ForgotPasswordRequest {
+    required string userIdentity = 1;
+}
+
+message PasswordRequest {
+    required int32 userId = 1;
+    required string verificationToken = 2;
+    required string password = 3;
+}
+
+message UserParamRequest {
+    required int32 userId = 1;
+    optional string locale = 2;
+}
+
+message UserUpdatePhoneRequest {
+    required int32 userId = 1;
+    required string phoneNumber = 2;
+    required string phoneNumberCountryCode = 3;
+}
+
+message UserUpdateEmailRequest {
+    required int32 userId = 1;
+    required string verificationToken = 2;
+    required string email = 3;
+}
+
+message UpdateUserBasicInfo{
+    required int32 userId = 1;
+    required string fullName = 2;
+    optional string email = 3;
+}
+message UserIqmaByAbsher {
+    required int32 userId = 1;
+    required string userid = 2;
+    optional string gender = 3;
+    optional string idVersionNo = 4;
+    optional string nationalityId = 5;
+    optional string exp = 6;
+    optional string lang = 7;
+    optional string iat = 8;
+    optional string jti = 9;
+    optional string cardIssueDateGregorian = 10;
+    optional string cardIssueDateHijri = 11;
+    optional string iqamaExpiryDateGregorian = 12;
+    optional string iqamaExpiryDateHijri = 13;
+    optional string idExpiryDateGregorian = 14;
+    optional string idExpiryDateHijri = 15;
+    optional string dobHijri = 16;
+    optional string dobGregorian = 17;
+    optional string nbf = 18;
+    optional string englishName = 19;  
+    optional string englishFirstName = 20; 
+    optional string englishFatherName = 21; 
+    optional string englishGrandFatherName = 22; 
+    optional string englishFamilyName = 23; 
+    optional string nationality  = 24; 
+    optional string issueLocationEn = 25;
+    optional string arabicName = 26;
+    optional string arabicFirstName = 27;
+    optional string arabicFatherName = 28;
+    optional string arabicGrandFatherName = 29;
+    optional string arabicFamilyName = 30;
+    optional string arabicNationality = 31;
+    optional string issueLocationAr = 32;
+    optional string locale = 33;
+    optional string module = 34;
+    optional string source = 35;
+    optional int32 listingRoleId = 36;
+}
+
+message SendOtpToWhatsAppRequest {
+    required int32 userId = 1;
+    required string locale = 2;
+    required string whatsAppNumberCountryCode = 3;
+    required string whatsAppNumber = 4;
+}
+
+message UserVerifyWhatsAppRequest {
+    required int32 userId = 1;
+    required string whatsAppVerificationCode = 2;
+    required string whatsAppNumber = 3;
+    required string whatsAppNumberCountryCode = 4;
+}
+message ProfilePhoneUpdateRequest {
+    required int32 userId = 1;
+    required string phoneVerificationCode = 2;
+    required string phoneNumber = 3;
+    required string phoneNumberCountryCode = 4;
+    optional string whatsAppNumber = 5;
+    optional string whatsAppNumberCountryCode = 6;
+}
+
+message UserVerifyPhoneRequest {
+    required int32 userId = 1;
+    required string phoneVerificationCode = 2;
+    optional string fullName= 3;
+    optional int32 roleId = 4;
+    optional string source = 5;
+    optional string module = 6;
+    required string locale = 7;
+}
+
+message UserVerifyEmailRequest {
+    required string verificationToken = 1;
+}
+
+message ChangePasswordRequest {
+    required int32 userId = 1;
+    required string oldPassword = 2;
+    required string newPassword = 3;
+}
+
+message GetAgentsRequest {
+    required int32 userId = 1;
+}
+
+message GetAgentsResponse {
+    optional Error error = 1;
+    optional GetAgentsData user = 2;
+}
+
+message GetAgentsData {
+    required int32 count = 1;
+    repeated GetAgentsListingData rows = 2;
+}
+
+message GetAgentsListingData {
+    required int32 id = 1;
+    required string email = 2;
+    required string fullName = 3;
+    required string avatar = 4;
+}
+
+message GetAllAgentsRequest {
+    required int32 userId = 1;
+    required string locale = 2;
+    int32 limit = 3;
+    int32 offset = 4;
+    string keyword = 5;
+    int32 permission = 6;
+    int32 property = 7;
+    int32 international = 8;
+    int32 statusId = 9;
+}
+
+message GetAllAgentsResponse {
+    optional Error error = 1;
+    optional GetAllAgentsData user = 2;
+}
+
+message GetAllAgentsData {
+    required int32 count = 1;
+    repeated GetAllAgentsListingData rows = 2;
+}
+
+message GetAllAgentsListingData {
+    required int32 id = 1;
+    required string fullName = 2;
+    required string email = 3;
+    required string avatar = 4;
+    required int32 statusId = 5;
+    required string status = 6;
+    required int32 totalSaleKsaProperties = 7;
+    required int32 totalRentKsaProperties = 8;
+    required int32 totalSaleInternationalProperties = 9;
+    repeated string businessArea = 10;
+    repeated string ksa = 11;
+    repeated string international = 12;
+    repeated string permissions = 13;
+}
+
+message AddAgentRequest {
+    required int32 userId = 1;
+    required string email = 2;
+    required string preferredLanguage = 3;
+    repeated int32 permissions = 4;
+}
+
+message AgentRegisterRequest {
+    required int32 userId = 1;
+    required string password = 2;
+    required string phoneNumber = 3;
+    required string phoneNumberCountryCode = 4;
+    optional string whatsAppNumber = 5;
+    optional string whatsAppNumberCountryCode = 6;
+    required string preferredLanguage = 7;
+    required UserRequestInfo userInfo = 8;
+    optional userTranslationRequest userTranslation = 9;
+    optional userBusinessInfoRequest userBusinessInfo = 10;
+}
+
+message GetAgentForRegisterRequest {
+    required string verificationToken = 1;
+    required string locale = 2;
+}
+
+message userTranslationRequest {
+    optional string workTitleEn = 1;
+    optional string workTitleAr = 2;
+    optional string bioEn = 3;
+    optional string bioAr = 4;
+}
+
+message userBusinessInfoRequest {
+    optional string experienceTypeId = 1;
+    optional string nationalityTypeId = 2;
+    optional int32 spokenLanguageTypeId = 3;
+}
+
+message GetAllAgentPermissionsRequest {
+    required string locale = 1;
+}
+
+message GetAllAgentPermissionsResponse {
+    optional Error error = 1;
+    repeated AgentPermissionMainData user = 2;
+}
+
+message AgentPermissionMainData {
+    string type = 1;
+    repeated AgentPermissionData permissions = 2;
+}
+
+message AgentPermissionData {
+    int32 permissionId = 1;
+    string permission = 2;
+}
+
+message AgentChangeStatusRequest {
+    required int32 userId = 1;
+    repeated int32 agentIds = 2;
+    required int32 statusId = 3;
+}
+
+message AgentTransferPropertyResponse {
+    optional Error error = 1;
+    repeated int32 user = 2;
+}
+
+message AgentTransferPropertyRequest {
+    required int32 userId = 1;
+    repeated int32 fromAgentIds = 2;
+    required int32 toAgentId = 3;
+}
+
+message SendMessageToAgentRequest {
+    required int32 userId = 1;
+    repeated int32 agentIds = 2;
+    required string subject = 3;
+    required string message = 4;
+    optional string file = 5;
+}
+
+message UpdateAgentPermissionRequest {
+    required int32 userId = 1;
+    required int32 agentId = 2;
+    repeated int32 permissions = 3;
+    int32 statusId = 4;
+}
+
+message GetAgentDetailRequest {
+    required int32 userId = 1;
+    required int32 agentId = 2;
+    required string locale = 3;
+}
+
+message GetAgentDetailResponse {
+    optional Error error = 1;
+    optional AgentDetailUser user = 2;
+}
+
+message AgentDetailUser {
+    int32 id = 1;
+    int32 statusId = 2;
+    string status = 3;
+    AgentContactDetail contactDetail = 4;
+    AgentUserInfo userInfo = 5;
+    AgentUserTranslationLocal userTranslationLocal = 6;
+    AgentActiveListing activeListing = 7;
+    AgentUserBusinessInfo userBusinessInfo = 8;
+    repeated int32 permissions = 9;
+    repeated PermissionsData permissionLables = 10;
+}
+
+message AgentContactDetail {
+    string email = 1;
+    string phoneNumberCountryCode = 2;
+    int64 phoneNumber = 3;
+    string whatsAppNumberCountryCode = 4;
+    int64 whatsAppNumber = 5;
+}
+
+message AgentUserInfo {
+    string fullName = 1;
+    string avatar = 2;
+}
+
+message AgentUserTranslationLocal {
+    string workTitle = 1;
+}
+
+message AgentActiveListing {
+    int32 totalSaleProperties = 1;
+    int32 totalRentProperties = 2;
+}
+
+message AgentUserBusinessInfo {
+    string nationality = 1;
+    string spokenLanguage = 2;
+}
+
+message ResendInvitationPendingStatusAgentRequest {
+    required int32 userId = 1;
+    required int32 agentId = 2;
+}
+
+message DeletePendingStatusAgentRequest {
+    required int32 userId = 1;
+    required int32 agentId = 2;
+}
+
+message CheckUserPermissionRequest {
+    required int32 userId = 1;
+}
+
+message CheckUserPermissionResponse {
+    optional Error error = 1;
+    optional bool user = 2;
+}
+message VerifyEmailRequest {
+    required int32 userId = 1;
+    required string locale = 2;
+    required string email = 3;
+}
+
+message UpdateProfileImageRequest {
+    required int32 userId = 1;
+    required string avatar = 2;
+}
+
+message CheckUserActiveRequest {
+    required int32 userId = 1;
+}
+
+message SaveDeviceTokenRequest{
+    required int32 userId=1;
+    required string token=2;
+}
+
+message GetNotificationsUserRequest{
+    required int32 userId=1;
+    required string status=2;
+    required int32 offset=3;
+    required int32 limit=4;
+}
+
+message ReadNotificationRequest{
+    required int32 notificationId=1;
+}
+
+message VerifiedUserRequest{
+    required int32 userId=1;
+}
+
+message VerifiedUserResponse{
+    optional Error error = 1;
+    optional string name = 2;
+    optional string firstName = 3;
+    optional string grandFatherName = 4;
+    optional string familyName = 5;
+    required string locale = 6;
+    required string userId = 7;
+    required string nationalId = 8;
+    required string email = 9;
+    required int32 phone_number = 10;
+    required int32 phoneNumberCountryCode = 11; 
+}
+
+message VerifiedUserEmailRequest {
+    required int32 userId =1;
+    required string email =2;
+}
+
+message VerifiedUserEmailResponse{
+    required int32 id =1;
+    required string email =2;
+}
+
+message GetUserPersonalInfoRequest {
+    required int32 id = 1;
+    optional string locale = 2;
+}
+
+message UserPersonalInfo {
+  optional int32 nationalityId = 0;
+  optional string phoneNumberCountryCode = 1;
+  optional string phoneNumber = 2;
+  optional string email = 3;
+  optional string fullName = 4;
+  optional string firstName = 5;
+  optional string grandFatherName = 6;
+  optional string familyName = 7;
+  optional string fatherName = 8;
+  optional bool auctionEnabled = 9;
+  optional bool ksa_citizen = 10;
+  optional string absher_id = 11;
+}
+
+
+message InfoResponse {
+    optional Error error = 1;
+    optional UserPersonalInfo data = 2;
+}
+
+
+message SubuserFilterRequest {
+    required uint32 userId = 1;
+    optional int32 limit = 2;
+    optional int32 offset = 3;
+    string keyword = 4;
+    string statusId = 5;
+    string locale = 6;
+}
+message SubuserFilterResponse {
+    optional Error error = 1;
+    optional SubuserFilterData user = 2;
+}
+message SubuserFilterData {
+
+    message Rows {
+        string id = 1;
+        string phoneNumber = 2;
+        string statusId = 3;
+        string status = 4;
+        string fullName = 5;
+        string phoneNumberCountryCode = 6;
+         int32 count = 7;
+    }
+
+    uint32 count = 1;
+    repeated Rows rows = 2;
+}
+
+message ParentUserRoleRequest{
+    required string userId = 1;
+    optional string locale = 2;
+}
+
+message ParentUserRoleResponse{
+    optional Error error = 1;
+    optional ParentUserInfo user = 2;
+}
+
+message ParentUserInfo{
+    optional string name = 1;
+    optional string role = 2;
+    optional string roleId = 3;
+}
+
+message GetListingUserDetailsRequest {
+    required int32 id = 1;
+    optional string locale = 2;
+}
+
+message GetListingUserDetailsResponse {
+    optional Error error = 1;
+    int32 id = 2;
+    required string email = 3;
+    string phoneNumber = 4;
+    int32 phoneNumberCountryCode = 5;
+    string fullName = 6;
+    bool auctionEnabled = 7;
+    bool ksa_citizen = 8;
+    string absher_id = 9;
+    string englishName = 10;
+    string arabicName = 11;
+    optional superUserDetails superUserDetails = 12;
+    optional string role = 13;
+    optional int32 roleId = 14;
+    optional int32 parentId = 15;
+    string familyName = 16;
+    string fatherName = 17;
+    string firstName = 18;
+    string grandFatherName = 19;
+}
+
+message superUserDetails{
+    string name = 1;
+    string role = 2;
+    int32 roleId = 3;
+    string phoneNumber = 4;
+    int32 phoneNumberCountryCode = 5;
+}
+
+
+message isUserRoleValidReq {
+    int32 id = 1;
+}
+
+message isUserRoleValidRes {
+    Error error = 1;
+    bool isVerified = 2;
+    int32 roleId = 3;
+    User user = 4;
+    bool isParent = 5;
+}
+
+message saveOwnerRoleRequest {
+    required int32 userId = 1;
+    required int32 roleId = 2;
+    required bool isVerified = 3;
+}
+
+message saveOwnerRoleResponse {
+    required int32 id = 1;
+    optional string locale = 2;
+}
+
+message manageSubUserRequest {
+    int32 userId = 1;
+    required string fullName = 2;
+    required string phoneNumberCountryCode = 3;
+    required string phoneNumber = 4;
+    required string module = 5;
+    required string source = 6;
+    required string locale = 7;
+    required string parentUserId = 8;
+}
+
+message manageSubUserResponse {
+    optional Error error = 1;
+    optional manageSubUserUser user = 2;
+}
+
+message manageSubUserUser {
+    required int32 id = 1;
+    required string message =2;
+}
+
+message deleteSubUserRequest {
+    required int32 subUserId = 1;
+    required int32 parentUserId = 2;
+    required string module = 3;
+    required string source = 4;
+    required string locale = 5;
+}
+
+message deleteSubUserUser {
+    required int32 id = 1;
+    required string message =2;
+}
+
+message deleteSubUserResponse {
+    optional Error error = 1;
+    optional deleteSubUserUser user = 2;
+}
+
+message getUserPostInfoRequest {
+    required int32 userId = 1;
+}
+
+message getUserPostInfoResponse {
+    optional string capacity = 1;
+    optional bool isVerified = 2;
+}
+
+message statusRequest {}
+
+message statusResponse {
+    string message = 1;
+}
+
+message checkPhoneNumberRequest{
+    required int64 phoneNumber = 1;
+}
+
+message checkPhoneNumberResponse{
+    optional Error error = 1;
+    optional bool exist = 2;
+}
+
+message checkUserContactExistenceRes {
+    optional Error error = 1;
+    int32 id = 2;
+    string email = 3;
+    string phoneNumber = 4;
+    int32 phoneNumberCountryCode = 5;
+    string fullName = 6;
+    bool auctionEnabled = 7;
+    bool ksa_citizen = 8;
+    string absher_id = 9;
+    string englishName = 10;
+    string arabicName = 11;
+    optional superUserDetails superUserDetails = 12;
+    optional string role = 13;
+    optional int32 roleId = 14;
+    optional int32 parentId = 15;
+    string familyName = 16;
+    string fatherName = 17;
+    string firstName = 18;
+    string grandFatherName = 19;
+}
+
+message saveBrokerDeveloperRoleReq {
+    int32 userId = 1;
+    int32 roleId = 2;
+}
+
+message saveBrokerDeveloperRoleRes {
+    Error error = 1;
+    string msg = 2;
+}
+
+message saveUserPostInfoReq { 
+    int64 absher_id=1;
+    int32 userId= 2;
+    int32 roleId= 3;
+    string identityNumber= 4;
+    string number= 5;
+    string capacity= 6;
+    string fullName = 7;
+}
+
+message saveUserPostInfoRes { 
+    Error error = 1;
+    string number= 2;
+    string capacity= 3;
+    int32 userId= 4;
+    string identityNumber= 5;
+    string adNumber= 6;
+    bool isVerified= 7;
+}
+
+
+message updateVerifiedBrokerReq { 
+    int32 userId=1;
+    int32 roleId=2;
+    bool isVerified=3;
+    string identityNumber=4;
+    string number=5;
+    string capacity=6;
+    string adNumber=7;
+}
+
+message updateVerifiedBrokerRes { 
+    Error error = 1;
+    string number= 2;
+    string capacity= 3;
+    int32 userId= 4;
+    string identityNumber= 5;
+    string adNumber= 6;
+    bool isVerified= 7;
+}
+
+message userPostInfoDetailsbyUserIdReq {
+    int32 userId = 1;
+}
+
+message userPostInfoDetailsbyUserIdRes {
+    string idType = 1;
+    string idNumber = 2;
+    Error error = 3;
+    int32 roleId = 4;
+}
+
+message getReviewerWithRoleIdForLocationReq {
+    required int32 zoneId = 1;
+    required int32 roleId = 2;
+    required string type = 3;
+}
+
+message getReviewerWithRoleIdForLocationRes {
+    required int32 userId = 1;
+}

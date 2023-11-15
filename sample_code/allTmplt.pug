@@ -1,0 +1,1259 @@
+
+// 41-sale-en
+
+if(propertyType && listingFor && location)
+    p #{propertyType} for #{listingFor} in #{location}
+
+if(landArea)
+    p Land Area: #{landArea} #{areaUnit}
+
+if(builtupArea)
+    p Built up Area: #{builtupArea} #{areaUnit}
+
+if(length && depth)
+    p Property Borders: Length: #{length} #{lengthUnit}, Depth: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p Land Number:  #{landNumber}
+
+if(areaNumber)
+    p Plot Number: #{areaNumber}
+
+if(totalStreets)
+    p 
+        | #{propertyType} is located on  #{totalStreets && pluralWords(totalStreets, 'street')}
+        if(street1Width)
+            | , #{street1Facing ? `${street1Facing} with ` : ''}#{street1Width} #{lengthUnit} width
+        if(street2Width)
+            | , #{street2Facing ? `${street2Facing} with ` : ''}#{street2Width} #{lengthUnit} width
+        if(street3Width)
+            | , #{street3Facing ? `${street3Facing} with ` : ''}#{street3Width} #{lengthUnit} width
+        if(street4Width)
+            | , #{street4Facing ? `${street4Facing} with ` : ''}#{street4Width} #{lengthUnit} width
+
+p
+    - let attrList = []
+    - noOfFloors && attrList.push(pluralWords(noOfFloors, 'floor'))
+    - noOfBedrooms && attrList.push(pluralWords(noOfBedrooms, 'bedroom'))
+    - noOfBathrooms && attrList.push(pluralWords(noOfBathrooms, 'bathroom'))
+    - noOfLivingrooms && attrList.push(pluralWords(noOfLivingrooms, 'living room'))
+    - noOfGuestRooms && attrList.push(pluralWords(noOfGuestRooms, 'guest room'))
+    - noOfApartments && attrList.push(pluralWords(noOfApartments, 'apartment'))
+    | The property has #{attrList.join(', ')}
+
+- let electricityAndWater = []
+- electricity && electricityAndWater.push('electricity')
+- water && electricityAndWater.push('water')
+if(electricityAndWater.length)
+    p #{propertyType} has #{electricityAndWater.join(' and ')} Connections
+
+if(buildingYear)
+    p Building year: #{buildingYear}
+
+if(amenities.length)
+    p Property amenities:
+    each amenity in amenities
+        p &nbsp; - &nbsp; #{amenity}
+
+if(fixtures.length)
+    p Property fixtures:
+    each fixture in fixtures
+        p &nbsp; - &nbsp; #{fixture}
+
+if(wathiqStatustags)
+    p Property Title deed status: #{wathiqStatustags.join(', ')}
+
+if(price)
+    p Price: #{price} #{currency}
+
+if(wasaltManaged)
+    p This property is advertised and manage by Wasalt for Real Estate
+
+// 52-sale-en
+
+if(propertyType && listingFor && location)
+    p #{propertyType} for #{listingFor} in #{location}
+
+if(landArea)
+    p Land Area: #{landArea} #{areaUnit}
+
+if(builtupArea)
+    p Built up Area: #{builtupArea} #{areaUnit}
+
+if(length && depth)
+    p Property Borders: Length: #{length} #{lengthUnit}, Depth: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p Land Number:  #{landNumber}
+
+if(areaNumber)
+    p Plot Number: #{areaNumber}
+
+if(totalStreets)
+    p 
+        | #{propertyType} is located on  #{totalStreets && pluralWords(totalStreets, 'street')}
+        if(street1Width)
+            | , #{street1Facing ? `${street1Facing} with ` : ''}#{street1Width} #{lengthUnit} width
+        if(street2Width)
+            | , #{street2Facing ? `${street2Facing} with ` : ''}#{street2Width} #{lengthUnit} width
+        if(street3Width)
+            | , #{street3Facing ? `${street3Facing} with ` : ''}#{street3Width} #{lengthUnit} width
+        if(street4Width)
+            | , #{street4Facing ? `${street4Facing} with ` : ''}#{street4Width} #{lengthUnit} width
+
+p
+    - let attrList = []
+    - noOfFloors && attrList.push(pluralWords(noOfFloors, 'floor'))
+    - noOfBedrooms && attrList.push(pluralWords(noOfBedrooms, 'bedroom'))
+    - noOfBathrooms && attrList.push(pluralWords(noOfBathrooms, 'bathroom'))
+    - noOfLivingrooms && attrList.push(pluralWords(noOfLivingrooms, 'living room'))
+    - noOfGuestRooms && attrList.push(pluralWords(noOfGuestRooms, 'guest room'))
+    | The property has #{attrList.join(', ')}
+
+- let electricityAndWater = []
+- electricity && electricityAndWater.push('electricity')
+- water && electricityAndWater.push('water')
+if(electricityAndWater.length)
+    p #{propertyType} has #{electricityAndWater.join(' and ')} Connections
+
+if(buildingYear)
+    p Building year: #{buildingYear}
+
+if(amenities.length)
+    p Property amenities:
+    each amenity in amenities
+        p &nbsp; - &nbsp; #{amenity}
+
+if(fixtures.length)
+    p Property fixtures:
+    each fixture in fixtures
+        p &nbsp; - &nbsp; #{fixture}
+
+if(wathiqStatustags)
+    p Property Title deed status: #{wathiqStatustags.join(', ')}
+
+if(price)
+    p Price: #{price} #{currency}
+
+if(wasaltManaged)
+    p This property is advertised and manage by Wasalt for Real Estate
+
+// 43-sale-en
+
+if(propertyType && listingFor && location)
+    p #{propertyType} for #{listingFor} in #{location}
+
+if(landArea)
+    p Land Area: #{landArea} #{areaUnit}
+
+if(length && depth)
+    p Property Borders: Length: #{length} #{lengthUnit}, Depth: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p Land Number:  #{landNumber}
+
+if(areaNumber)
+    p Plot Number: #{areaNumber}
+
+if(totalStreets)
+    p 
+        | #{propertyType} is located on  #{totalStreets && pluralWords(totalStreets, 'street')}
+        if(street1Width)
+            | , #{street1Facing ? `${street1Facing} with ` : ''}#{street1Width} #{lengthUnit} width
+        if(street2Width)
+            | , #{street2Facing ? `${street2Facing} with ` : ''}#{street2Width} #{lengthUnit} width
+        if(street3Width)
+            | , #{street3Facing ? `${street3Facing} with ` : ''}#{street3Width} #{lengthUnit} width
+        if(street4Width)
+            | , #{street4Facing ? `${street4Facing} with ` : ''}#{street4Width} #{lengthUnit} width
+
+- let electricityAndWater = []
+- electricity && electricityAndWater.push('electricity')
+- water && electricityAndWater.push('water')
+if(electricityAndWater.length)
+    p #{propertyType} has #{electricityAndWater.join(' and ')} Connections
+
+
+if(wathiqStatustags)
+    p Property Title deed status: #{wathiqStatustags.join(', ')}
+
+if(price)
+    p Price: #{price} #{currency}
+
+if(wasaltManaged)
+    p This property is advertised and manage by Wasalt for Real Estate
+
+// 39-sale-en
+
+p
+    if(propertyType && listingFor && location)
+        | #{furnishStatus}
+        | #{residencyType}
+        | #{propertyType} for #{listingFor} in #{location}
+
+if(builtupArea)
+    p Built up Area: #{builtupArea} #{areaUnit}
+
+if(floorNumber)
+    p Floor Number : #{floorNumber}
+
+if(length && depth)
+    p Property Borders: Length: #{length} #{lengthUnit}, Depth: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p Land Number:  #{landNumber}
+
+if(areaNumber)
+    p Plot Number: #{areaNumber}
+
+if(totalStreets)
+    p 
+        | #{propertyType} is located on  #{totalStreets && pluralWords(totalStreets, 'street')}
+        if(street1Width)
+            | , #{street1Facing ? `${street1Facing} with ` : ''}#{street1Width} #{lengthUnit} width
+        if(street2Width)
+            | , #{street2Facing ? `${street2Facing} with ` : ''}#{street2Width} #{lengthUnit} width
+        if(street3Width)
+            | , #{street3Facing ? `${street3Facing} with ` : ''}#{street3Width} #{lengthUnit} width
+        if(street4Width)
+            | , #{street4Facing ? `${street4Facing} with ` : ''}#{street4Width} #{lengthUnit} width
+
+p
+    - let attrList = []
+    - noOfFloors && attrList.push(pluralWords(noOfFloors, 'floor'))
+    - noOfBedrooms && attrList.push(pluralWords(noOfBedrooms, 'bedroom'))
+    - noOfBathrooms && attrList.push(pluralWords(noOfBathrooms, 'bathroom'))
+    - noOfLivingrooms && attrList.push(pluralWords(noOfLivingrooms, 'living room'))
+    - noOfGuestRooms && attrList.push(pluralWords(noOfGuestRooms, 'guest room'))
+    | The property has #{attrList.join(', ')}
+
+- let electricityAndWater = []
+- electricity && electricityAndWater.push('electricity')
+- water && electricityAndWater.push('water')
+if(electricityAndWater.length)
+    p #{propertyType} has #{electricityAndWater.join(' and ')} Connections
+
+if(buildingYear)
+    p Building year: #{buildingYear}
+
+if(furnishStatus)
+    p Apartment is: #{furnishStatus}
+
+if(amenities.length)
+    p Property amenities:
+    each amenity in amenities
+        p &nbsp; - &nbsp; #{amenity}
+
+if(fixtures.length)
+    p Property fixtures:
+    each fixture in fixtures
+        p &nbsp; - &nbsp; #{fixture}
+
+if(wathiqStatustags)
+    p Property Title deed status: #{wathiqStatustags.join(', ')}
+
+if(price)
+    p Price: #{price} #{currency}
+
+if(wasaltManaged)
+    p This property is advertised and manage by Wasalt for Real Estate
+
+// 47-sale-en
+
+p
+    if(propertyType && listingFor && location)
+        | #{residencyType}
+        | #{propertyType} for #{listingFor} in #{location}
+
+if(builtupArea)
+    p Built up Area: #{builtupArea} #{areaUnit}
+
+if(length && depth)
+    p Property Borders: Length: #{length} #{lengthUnit}, Depth: #{depth} #{lengthUnit}
+    
+if(landNumber)
+    p Land Number:  #{landNumber}
+
+if(areaNumber)
+    p Plot Number: #{areaNumber}
+
+if(totalStreets)
+    p 
+        | #{propertyType} is located on  #{totalStreets && pluralWords(totalStreets, 'street')}
+        if(street1Width)
+            | , #{street1Facing ? `${street1Facing} with ` : ''}#{street1Width} #{lengthUnit} width
+        if(street2Width)
+            | , #{street2Facing ? `${street2Facing} with ` : ''}#{street2Width} #{lengthUnit} width
+        if(street3Width)
+            | , #{street3Facing ? `${street3Facing} with ` : ''}#{street3Width} #{lengthUnit} width
+        if(street4Width)
+            | , #{street4Facing ? `${street4Facing} with ` : ''}#{street4Width} #{lengthUnit} width
+
+p
+    - let attrList = []
+    - noOfFloors && attrList.push(pluralWords(noOfFloors, 'floor'))
+    - noOfApartments && attrList.push(pluralWords(noOfApartments, 'apartment'))
+    - noOfOpenings && attrList.push(pluralWords(noOfOpenings, 'Opening'))
+    - noOfParkings && attrList.push(pluralWords(noOfParkings, 'parking slot'))
+    | The property has #{attrList.join(', ')}
+
+- let electricityAndWater = []
+- electricity && electricityAndWater.push('electricity')
+- water && electricityAndWater.push('water')
+if(electricityAndWater.length)
+    p #{propertyType} has #{electricityAndWater.join(' and ')} Connections
+
+if(buildingYear)
+    p Building year: #{buildingYear}
+
+if(wathiqStatustags)
+    p Property Title deed status: #{wathiqStatustags.join(', ')}
+
+if(price)
+    p Price: #{price} #{currency}
+
+if(wasaltManaged)
+    p This property is advertised and manage by Wasalt for Real Estate
+
+// 44-sale-en
+
+if(propertyType && listingFor && location)
+    p #{propertyType} for #{listingFor} in #{location}
+
+if(landArea)
+    p Land Area: #{landArea} #{areaUnit}
+
+if(length && depth)
+    p Property Borders: Length: #{length} #{lengthUnit}, Depth: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p Land Number:  #{landNumber}
+
+if(areaNumber)
+    p Plot Number: #{areaNumber}
+
+if(totalStreets)
+    p 
+        | #{propertyType} is located on  #{totalStreets && pluralWords(totalStreets, 'street')}
+        if(street1Width)
+            | , #{street1Facing ? `${street1Facing} with ` : ''}#{street1Width} #{lengthUnit} width
+        if(street2Width)
+            | , #{street2Facing ? `${street2Facing} with ` : ''}#{street2Width} #{lengthUnit} width
+        if(street3Width)
+            | , #{street3Facing ? `${street3Facing} with ` : ''}#{street3Width} #{lengthUnit} width
+        if(street4Width)
+            | , #{street4Facing ? `${street4Facing} with ` : ''}#{street4Width} #{lengthUnit} width
+
+p
+    - let attrList = []
+    - noOfBedrooms && attrList.push(pluralWords(noOfBedrooms, 'bedroom'))
+    - noOfBathrooms && attrList.push(pluralWords(noOfBathrooms, 'bathroom'))
+    - noOfPalmsTrees && attrList.push(noOfPalmsTrees+' palm trees')
+    - noOfWaterWells && attrList.push(noOfWaterWells+ ' water wells')
+    | The property has #{attrList.join(', ')}
+
+- let electricityAndWater = []
+- electricity && electricityAndWater.push('electricity')
+- water && electricityAndWater.push('water')
+if(electricityAndWater.length)
+    p #{propertyType} has #{electricityAndWater.join(' and ')} Connections
+
+if(wathiqStatustags)
+    p Property Title deed status: #{wathiqStatustags.join(', ')}
+
+if(price)
+    p Price: #{price} #{currency}
+
+if(wasaltManaged)
+    p This property is advertised and manage by Wasalt for Real Estate
+
+// 48-sale-en
+
+if(propertyType && listingFor && location)
+    p #{propertyType} for #{listingFor} in #{location}
+
+if(landArea)
+    p Land Area: #{landArea} #{areaUnit}
+
+if(builtupArea)
+    p Built up Area: #{builtupArea} #{areaUnit}
+
+if(length && depth)
+    p Property Borders: Length: #{length} #{lengthUnit}, Depth: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p Land Number:  #{landNumber}
+
+if(areaNumber)
+    p Plot Number: #{areaNumber}
+
+if(totalStreets)
+    p 
+        | #{propertyType} is located on  #{totalStreets && pluralWords(totalStreets, 'street')}
+        if(street1Width)
+            | , #{street1Facing ? `${street1Facing} with ` : ''}#{street1Width} #{lengthUnit} width
+        if(street2Width)
+            | , #{street2Facing ? `${street2Facing} with ` : ''}#{street2Width} #{lengthUnit} width
+        if(street3Width)
+            | , #{street3Facing ? `${street3Facing} with ` : ''}#{street3Width} #{lengthUnit} width
+        if(street4Width)
+            | , #{street4Facing ? `${street4Facing} with ` : ''}#{street4Width} #{lengthUnit} width
+
+p
+    - let attrList = []
+    - noOfFloors && attrList.push(pluralWords(noOfFloors, 'floor'))
+    - noOfBedrooms && attrList.push(pluralWords(noOfBedrooms, 'bedroom'))
+    - noOfBathrooms && attrList.push(pluralWords(noOfBathrooms, 'bathroom'))
+    - noOfLivingrooms && attrList.push(pluralWords(noOfLivingrooms, 'living room'))
+    - noOfGuestRooms && attrList.push(pluralWords(noOfGuestRooms, 'guest room'))
+    | The property has #{attrList.join(', ')}
+
+- let electricityAndWater = []
+- electricity && electricityAndWater.push('electricity')
+- water && electricityAndWater.push('water')
+if(electricityAndWater.length)
+    p #{propertyType} has #{electricityAndWater.join(' and ')} Connections
+
+if(buildingYear)
+    p Building year: #{buildingYear}     
+
+if(amenities.length)
+    p Property amenities:
+    each amenity in amenities
+        p &nbsp; - &nbsp; #{amenity}
+
+if(fixtures.length)
+    p Property fixtures:
+    each fixture in fixtures
+        p &nbsp; - &nbsp; #{fixture}
+
+if(furnishStatus)
+    p Rest House is #{furnishStatus}
+
+if(wathiqStatustags)
+    p Property Title deed status: #{wathiqStatustags.join(', ')}
+
+if(price)
+    p Price: #{price} #{currency}
+
+if(wasaltManaged)
+    p This property is advertised and manage by Wasalt for Real Estate
+
+// 53-sale-en
+
+if(propertyType && listingFor && location)
+    p #{propertyType} for #{listingFor} in #{location}
+
+if(landArea)
+    p Land Area: #{landArea} #{areaUnit}
+
+if(builtupArea)
+    p Built up Area: #{builtupArea} #{areaUnit}
+
+if(length && depth)
+    p Property Borders: Length: #{length} #{lengthUnit}, Depth: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p Land Number:  #{landNumber}
+
+if(areaNumber)
+    p Plot Number: #{areaNumber}
+
+if(totalStreets)
+    p 
+        | #{propertyType} is located on  #{totalStreets && pluralWords(totalStreets, 'street')}
+        if(street1Width)
+            | , #{street1Facing ? `${street1Facing} with ` : ''}#{street1Width} #{lengthUnit} width
+        if(street2Width)
+            | , #{street2Facing ? `${street2Facing} with ` : ''}#{street2Width} #{lengthUnit} width
+        if(street3Width)
+            | , #{street3Facing ? `${street3Facing} with ` : ''}#{street3Width} #{lengthUnit} width
+        if(street4Width)
+            | , #{street4Facing ? `${street4Facing} with ` : ''}#{street4Width} #{lengthUnit} width
+
+p
+    - let attrList = []
+    - noOfFloors && attrList.push(pluralWords(noOfFloors, 'floor'))
+    - noOfBedrooms && attrList.push(pluralWords(noOfBedrooms, 'bedroom'))
+    - noOfBathrooms && attrList.push(pluralWords(noOfBathrooms, 'bathroom'))
+    - noOfLivingrooms && attrList.push(pluralWords(noOfLivingrooms, 'living room'))
+    - noOfGuestRooms && attrList.push(pluralWords(noOfGuestRooms, 'guest room'))
+    | The property has #{attrList.join(', ')}
+
+- let electricityAndWater = []
+- electricity && electricityAndWater.push('electricity')
+- water && electricityAndWater.push('water')
+if(electricityAndWater.length)
+    p #{propertyType} has #{electricityAndWater.join(' and ')} Connections
+
+if(amenities.length)
+    p Property amenities:
+    each amenity in amenities
+        p &nbsp; - &nbsp; #{amenity}
+
+if(fixtures.length)
+    p Property fixtures:
+    each fixture in fixtures
+        p &nbsp; - &nbsp; #{fixture}
+
+if(furnishStatus)
+    p #{propertyType} is #{furnishStatus}
+
+if(wathiqStatustags)
+    p Property Title deed status: #{wathiqStatustags.join(', ')}
+
+if(price)
+    p Price: #{price} #{currency}
+
+if(wasaltManaged)
+    p This property is advertised and manage by Wasalt for Real Estate
+
+// 42-sale-en
+
+if(propertyType && listingFor && location)
+    p #{propertyType} for #{listingFor} in #{location}
+
+if(landArea)
+    p Land Area: #{landArea} #{areaUnit}
+
+if(builtupArea)
+    p Built up Area: #{builtupArea} #{areaUnit}
+
+if(length && depth)
+    p Property Borders: Length: #{length} #{lengthUnit}, Depth: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p Land Number:  #{landNumber}
+
+if(areaNumber)
+    p Plot Number: #{areaNumber}
+
+if(totalStreets)
+    p 
+        | #{propertyType} is located on  #{totalStreets && pluralWords(totalStreets, 'street')}
+        if(street1Width)
+            | , #{street1Facing ? `${street1Facing} with ` : ''}#{street1Width} #{lengthUnit} width
+        if(street2Width)
+            | , #{street2Facing ? `${street2Facing} with ` : ''}#{street2Width} #{lengthUnit} width
+        if(street3Width)
+            | , #{street3Facing ? `${street3Facing} with ` : ''}#{street3Width} #{lengthUnit} width
+        if(street4Width)
+            | , #{street4Facing ? `${street4Facing} with ` : ''}#{street4Width} #{lengthUnit} width
+
+p
+    - let attrList = []
+    - noOfFloors && attrList.push(pluralWords(noOfFloors, 'floor'))
+    - noOfBedrooms && attrList.push(pluralWords(noOfBedrooms, 'bedroom'))
+    - noOfBathrooms && attrList.push(pluralWords(noOfBathrooms, 'bathroom'))
+    - noOfLivingrooms && attrList.push(pluralWords(noOfLivingrooms, 'living room'))
+    - noOfGuestRooms && attrList.push(pluralWords(noOfGuestRooms, 'guest room'))
+    - noOfParkings && attrList.push(pluralWords(noOfParkings, 'parking slot'))
+    | The property has #{attrList.join(', ')}
+
+if(buildingYear)
+    p Building year: #{buildingYear}
+
+- let electricityAndWater = []
+- electricity && electricityAndWater.push('electricity')
+- water && electricityAndWater.push('water')
+if(electricityAndWater.length)
+    p #{propertyType} has #{electricityAndWater.join(' and ')} Connections
+
+if(amenities.length)
+    p Property amenities:
+    each amenity in amenities
+        p &nbsp; - &nbsp; #{amenity}
+
+if(fixtures.length)
+    p Property fixtures:
+    each fixture in fixtures
+        p &nbsp; - &nbsp; #{fixture}
+
+if(wathiqStatustags)
+    p Property Title deed status: #{wathiqStatustags.join(', ')}
+
+if(price)
+    p Price: #{price} #{currency}
+
+if(wasaltManaged)
+    p This property is advertised and manage by Wasalt for Real Estate
+
+// 41-sale-ar
+
+if(propertyType && listingFor && location)
+    p(dir='rtl') #{propertyType} سكنية #{listingFor} في  #{location}
+
+if(landArea)
+    p(dir='rtl') مساحة الأرض #{landArea} #{areaUnit}
+
+if(builtupArea)
+    p(dir='rtl') مسطحات البناء #{builtupArea} #{areaUnit}
+if(length && depth)
+    p(dir='rtl') اطوالها: الطول #{length} #{lengthUnit}٬ 
+        | العمق: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p(dir='rtl') رقم القطعة:  #{landNumber}
+
+if(areaNumber)
+    p(dir='rtl') رقم المخطط: #{areaNumber}
+
+if(totalStreets)
+    p(dir='rtl')
+        if(totalStreets == 1) 
+            | يحدها #{totalStreets && `${totalStreets} شارع: `}
+        if(totalStreets == 2)
+            | يحدها #{totalStreets && `${totalStreets}  شارع: `}
+        if(totalStreets == 3)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `}
+        if(totalStreets == 4)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `}   
+        if(street1Width)
+            | #{street1Facing ? `${street1Facing}٬ ` : ''}
+            | بعرض #{street1Width} #{lengthUnit} 
+        if(street2Width)
+            | و #{street2Facing ? `${street2Facing}٬ ` : ''}
+            | بعرض #{street2Width} #{lengthUnit} 
+        if(street3Width)
+            | و #{street3Facing ? `${street3Facing}٬ ` : ''}
+            | بعرض #{street3Width} #{lengthUnit} 
+        if(street4Width)
+            | و #{street4Facing ? `${street4Facing}٬ ` : ''}
+            | بعرض #{street4Width} #{lengthUnit} 
+        
+
+p(dir='rtl')
+    - let attrList = []
+    - noOfFloors && attrList.push(noOfFloors >= 1 && noOfFloors <=2 ? `${noOfFloors} دور`  : (noOfFloors >=11  ? `${noOfFloors} دور`  :  `${noOfFloors} ادوار`))
+    - noOfBedrooms && attrList.push(noOfBedrooms >= 1 && noOfBedrooms <=2  ? `${noOfBedrooms} غرفة`  : `${noOfBedrooms} غرف`)
+    - noOfBathrooms && attrList.push(noOfBathrooms >= 1 && noOfBathrooms <=2  ? `${noOfBathrooms} دورة مياه`  :   `${noOfBathrooms} دورات مياه`)
+    - noOfLivingrooms && attrList.push(noOfLivingrooms >= 1 && noOfLivingrooms <=2 ? `${noOfLivingrooms} صالة`  :   `${noOfLivingrooms} صالات`)
+    - noOfGuestRooms && attrList.push(noOfGuestRooms >= 1 && noOfGuestRooms <=2  ? `${noOfGuestRooms} مجلس`  :  `${noOfGuestRooms} مجالس`)
+    - noOfApartments && attrList.push(noOfApartments >= 1 && noOfApartments <=2  ? `${noOfApartments} شقة`  : (noOfApartments >=11  ? `${noOfApartments} شقة`  :  `${noOfApartments} شقق`) )
+    | مكونة من: #{attrList.join(' و ')}
+    
+if(electricity)
+  p(dir='rtl') واصل كهرباء
+
+if(water)
+  p(dir='rtl') واصل مياه
+
+if(buildingYear)
+    p(dir='rtl') سنة البناء: #{buildingYear}
+
+if(amenities && amenities.length)
+    p(dir='rtl') مميزات العقار:
+    each amenity in amenities
+        p(dir='rtl') &nbsp; - &nbsp; #{amenity}
+
+if(fixtures && fixtures.length)
+    p(dir='rtl') التجهيزات:
+    each fixture in fixtures
+        p(dir='rtl') &nbsp; - &nbsp; #{fixture}
+
+if(wathiqStatustags)
+    p(dir='rtl') حالة الصك: #{wathiqStatustags.join('٬ ')}
+
+if(price)
+    p(dir='rtl') سعرها #{price} #{currency}
+
+if(wasaltManaged)
+    p(dir='rtl') هذا العرض مسوق من قبل شركة وصلت للخدمات العقارية
+
+// 52-sale-ar
+
+if(propertyType && listingFor && location)
+    p(dir='rtl') #{propertyType} سكنية #{listingFor} في  #{location}
+
+if(landArea)
+    p(dir='rtl') مساحة الأرض #{landArea} #{areaUnit}
+
+if(builtupArea)
+    p(dir='rtl') مسطحات البناء #{builtupArea} #{areaUnit}
+if(length && depth)
+    p(dir='rtl') اطوالها: الطول #{length} #{lengthUnit}٬ 
+        | العمق: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p(dir='rtl') رقم القطعة:  #{landNumber}
+
+if(areaNumber)
+    p(dir='rtl') رقم المخطط: #{areaNumber}
+
+if(totalStreets)
+    p(dir='rtl') 
+        if(totalStreets == 1) 
+            | يحدها #{totalStreets && `${totalStreets} شارع: `}
+        if(totalStreets == 2)
+            | يحدها #{totalStreets && `${totalStreets} شارع: `}
+        if(totalStreets == 3)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `}
+        if(totalStreets == 4)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `} 
+        if(street1Width)
+            | #{street1Facing ? `${street1Facing}٬ ` : ''}
+            | بعرض #{street1Width} #{lengthUnit} 
+        if(street2Width)
+            | و #{street2Facing ? `${street2Facing}٬ ` : ''}
+            | بعرض #{street2Width} #{lengthUnit} 
+        if(street3Width)
+            | و #{street3Facing ? `${street3Facing}٬ ` : ''}
+            | بعرض #{street3Width} #{lengthUnit} 
+        if(street4Width)
+            | و #{street4Facing ? `${street4Facing}٬ ` : ''}
+            | بعرض #{street4Width} #{lengthUnit}  
+        
+
+p(dir='rtl')
+    - let attrList = []
+    - noOfFloors && attrList.push(noOfFloors >= 1 && noOfFloors <=2 ? `${noOfFloors} دور`  : (noOfFloors >=11  ? `${noOfFloors} دور`  :  `${noOfFloors} ادوار`))
+    - noOfBedrooms && attrList.push(noOfBedrooms >= 1 && noOfBedrooms <=2  ? `${noOfBedrooms} غرفة`  : `${noOfBedrooms} غرف`)
+    - noOfBathrooms && attrList.push(noOfBathrooms >= 1 && noOfBathrooms <=2  ? `${noOfBathrooms} دورة مياه`  :   `${noOfBathrooms} دورات مياه`)
+    - noOfLivingrooms && attrList.push(noOfLivingrooms >= 1 && noOfLivingrooms <=2 ? `${noOfLivingrooms} صالة`  :   `${noOfLivingrooms} صالات`)
+    - noOfGuestRooms && attrList.push(noOfGuestRooms >= 1 && noOfGuestRooms <=2  ? `${noOfGuestRooms} مجلس`  :  `${noOfGuestRooms} مجالس`)
+    | مكونة من: #{attrList.join(' و ')}
+    
+if(electricity)
+  p(dir='rtl') واصل كهرباء
+
+if(water)
+  p(dir='rtl') واصل مياه
+
+if(buildingYear)
+    p(dir='rtl') سنة البناء: #{buildingYear}
+
+if(amenities && amenities.length)
+    p(dir='rtl') مميزات العقار:
+    each amenity in amenities
+        p(dir='rtl') &nbsp; - &nbsp; #{amenity}
+
+if(fixtures && fixtures.length)
+    p(dir='rtl') التجهيزات:
+    each fixture in fixtures
+        p(dir='rtl') &nbsp; - &nbsp; #{fixture}
+
+if(wathiqStatustags)
+    p(dir='rtl') حالة الصك: #{wathiqStatustags.join('٬ ')}
+
+if(price)
+    p(dir='rtl') سعرها #{price} #{currency}
+
+if(wasaltManaged)
+    p(dir='rtl') هذا العرض مسوق من قبل شركة وصلت للخدمات العقارية
+
+
+// 43-sale-ar
+
+if(propertyType && listingFor && location)
+    p(dir='rtl') #{propertyType} #{listingFor} في  #{location}
+
+if(landArea)
+    p(dir='rtl') مساحة الأرض #{landArea} #{areaUnit}
+
+if(builtupArea)
+    p(dir='rtl') مسطحات البناء #{builtupArea} #{areaUnit}
+if(length && depth)
+    p(dir='rtl') اطوالها: الطول #{length} #{lengthUnit}٬ 
+        | العمق: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p(dir='rtl') رقم القطعة:  #{landNumber}
+
+if(areaNumber)
+    p(dir='rtl') رقم المخطط: #{areaNumber}
+
+if(totalStreets)
+    p(dir='rtl') 
+        if(totalStreets == 1) 
+            | يحدها #{totalStreets && `${totalStreets} شارع: `}
+        if(totalStreets == 2)
+            | يحدها #{totalStreets && `${totalStreets} شارع: `}
+        if(totalStreets == 3)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `}
+        if(totalStreets == 4)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `} 
+        if(street1Width)
+            | #{street1Facing ? `${street1Facing}٬ ` : ''}
+            | بعرض #{street1Width} #{lengthUnit} 
+        if(street2Width)
+            | و #{street2Facing ? `${street2Facing}٬ ` : ''}
+            | بعرض #{street2Width} #{lengthUnit} 
+        if(street3Width)
+            | و #{street3Facing ? `${street3Facing}٬ ` : ''}
+            | بعرض #{street3Width} #{lengthUnit} 
+        if(street4Width)
+            | و #{street4Facing ? `${street4Facing}٬ ` : ''}
+            | بعرض #{street4Width} #{lengthUnit}  
+    
+if(electricity)
+  p(dir='rtl') واصل كهرباء
+
+if(water)
+  p(dir='rtl') واصل مياه
+
+if(buildingYear)
+    p(dir='rtl') سنة البناء: #{buildingYear}
+
+if(wathiqStatustags)
+    p(dir='rtl') حالة الصك: #{wathiqStatustags.join('٬ ')}
+
+if(price)
+    p(dir='rtl') سعرها #{price} #{currency}
+
+if(wasaltManaged)
+    p(dir='rtl') هذا العرض مسوق من قبل شركة وصلت للخدمات العقارية
+
+// 39-sale-ar
+
+if(propertyType && listingFor && location)
+    p(dir='rtl') #{propertyType} #{residencyType} #{furnishStatus && ` ${furnishStatus}`} #{listingFor} في  #{location}
+
+if(builtupArea)
+    p(dir='rtl') مسطحات البناء #{builtupArea} #{areaUnit}
+
+if(floorNumber)
+    p(dir='rtl') الدور: #{floorNumber}
+
+if(length && depth)
+    p(dir='rtl') اطوالها: الطول #{length} #{lengthUnit}٬ 
+        | العمق: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p(dir='rtl') رقم القطعة:  #{landNumber}
+
+if(areaNumber)
+    p(dir='rtl') رقم المخطط: #{areaNumber}
+
+if(totalStreets)
+    p(dir='rtl') 
+        if(totalStreets == 1) 
+            | يحدها #{totalStreets && `${totalStreets} شارع: `}
+        if(totalStreets == 2)
+            | يحدها #{totalStreets && `${totalStreets} شارع: `}
+        if(totalStreets == 3)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `}
+        if(totalStreets == 4)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `} 
+        if(street1Width)
+            | #{street1Facing ? `${street1Facing}٬ ` : ''}
+            | بعرض #{street1Width} #{lengthUnit} 
+        if(street2Width)
+            | و #{street2Facing ? `${street2Facing}٬ ` : ''}
+            | بعرض #{street2Width} #{lengthUnit} 
+        if(street3Width)
+            | و #{street3Facing ? `${street3Facing}٬ ` : ''}
+            | بعرض #{street3Width} #{lengthUnit} 
+        if(street4Width)
+            | و #{street4Facing ? `${street4Facing}٬ ` : ''}
+            | بعرض #{street4Width} #{lengthUnit}  
+        
+
+p(dir='rtl')
+    - let attrList = []
+    - noOfFloors && attrList.push(noOfFloors >= 1 && noOfFloors <=2 ? `${noOfFloors} دور`  : (noOfFloors >=11  ? `${noOfFloors} دور`  :  `${noOfFloors} ادوار`))
+    - noOfBedrooms && attrList.push(noOfBedrooms >= 1 && noOfBedrooms <=2  ? `${noOfBedrooms} غرفة`  : `${noOfBedrooms} غرف`)
+    - noOfBathrooms && attrList.push(noOfBathrooms >= 1 && noOfBathrooms <=2  ? `${noOfBathrooms} دورة مياه`  :   `${noOfBathrooms} دورات مياه`)
+    - noOfLivingrooms && attrList.push(noOfLivingrooms >= 1 && noOfLivingrooms <=2 ? `${noOfLivingrooms} صالة`  :   `${noOfLivingrooms} صالات`)
+    - noOfGuestRooms && attrList.push(noOfGuestRooms >= 1 && noOfGuestRooms <=2  ? `${noOfGuestRooms} مجلس`  :  `${noOfGuestRooms} مجالس`)
+    | مكونة من: #{attrList.join(' و ')}
+    
+if(electricity)
+  p(dir='rtl') واصل كهرباء
+
+if(water)
+  p(dir='rtl') واصل مياه
+
+if(buildingYear)
+    p(dir='rtl') سنة البناء: #{buildingYear}
+
+if(amenities && amenities.length)
+    p(dir='rtl') مميزات العقار:
+    each amenity in amenities
+        p(dir='rtl') &nbsp; - &nbsp; #{amenity}
+
+if(fixtures && fixtures.length)
+    p(dir='rtl') التجهيزات:
+    each fixture in fixtures
+        p(dir='rtl') &nbsp; - &nbsp; #{fixture}
+
+if(wathiqStatustags)
+    p(dir='rtl') حالة الصك: #{wathiqStatustags.join('٬ ')}
+
+if(price)
+    p(dir='rtl') سعرها #{price} #{currency}
+
+if(wasaltManaged)
+    p(dir='rtl') هذا العرض مسوق من قبل شركة وصلت للخدمات العقارية
+
+// 47-sale-ar
+
+if(propertyType && listingFor && location)
+    p(dir='rtl') #{propertyType} #{residencyType} #{listingFor} في  #{location}
+
+if(builtupArea)
+    p(dir='rtl') مسطحات البناء #{builtupArea} #{areaUnit}
+if(length && depth)
+    p(dir='rtl') اطوالها: الطول #{length} #{lengthUnit}٬ 
+        | العمق: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p(dir='rtl') رقم القطعة:  #{landNumber}
+
+if(areaNumber)
+    p(dir='rtl') رقم المخطط: #{areaNumber}
+
+if(totalStreets)
+    p(dir='rtl') 
+        if(totalStreets == 1) 
+            | يحدها #{totalStreets && `${totalStreets} شارع: `}
+        if(totalStreets == 2)
+            | يحدها #{totalStreets && `${totalStreets} شارع: `}
+        if(totalStreets == 3)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `}
+        if(totalStreets == 4)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `} 
+        if(street1Width)
+            | #{street1Facing ? `${street1Facing}٬ ` : ''}
+            | بعرض #{street1Width} #{lengthUnit} 
+        if(street2Width)
+            | و #{street2Facing ? `${street2Facing}٬ ` : ''}
+            | بعرض #{street2Width} #{lengthUnit} 
+        if(street3Width)
+            | و #{street3Facing ? `${street3Facing}٬ ` : ''}
+            | بعرض #{street3Width} #{lengthUnit} 
+        if(street4Width)
+            | و #{street4Facing ? `${street4Facing}٬ ` : ''}
+            | بعرض #{street4Width} #{lengthUnit}  
+        
+
+p(dir='rtl')
+    - let attrList = []
+    - noOfFloors && attrList.push(noOfFloors >= 1 && noOfFloors <=2 ? `${noOfFloors} دور`  : (noOfFloors >=11  ? `${noOfFloors} دور`  :  `${noOfFloors} ادوار`))
+    - noOfApartments && attrList.push(noOfApartments >= 1 && noOfApartments <=2  ? `${noOfApartments} شقة`  : (noOfApartments >=11  ? `${noOfApartments} شقة`  :  `${noOfApartments} شقق`))
+    - noOfOpenings && attrList.push(noOfOpenings >= 1 && noOfOpenings <=2  ? `${noOfOpenings} فتحة`  : (noOfOpenings >=11  ? `${noOfOpenings} فتحة`  :  `${noOfOpenings} فتحات`))
+    - noOfParkings && attrList.push(noOfParkings >= 1 && noOfParkings <=2  ? `${noOfParkings} موقف`  : (noOfParkings >=11  ? `${noOfParkings} موقف`  :  `${noOfParkings} مواقف`) )
+    | مكونة من: #{attrList.join(' و ')}
+    
+if(electricity)
+  p(dir='rtl') واصل كهرباء
+
+if(water)
+  p(dir='rtl') واصل مياه
+
+if(buildingYear)
+    p(dir='rtl') سنة البناء: #{buildingYear}
+
+if(furnishStatus)
+    p(dir='rtl') العمارة  #{furnishStatus}
+
+if(wathiqStatustags)
+    p(dir='rtl') حالة الصك: #{wathiqStatustags.join('٬ ')}
+
+if(price)
+    p(dir='rtl') سعرها #{price} #{currency}
+
+if(wasaltManaged)
+    p(dir='rtl') هذا العرض مسوق من قبل شركة وصلت للخدمات العقارية
+
+// 44-sale-ar
+
+if(propertyType && listingFor && location)
+    p(dir='rtl') #{propertyType} سكنية #{listingFor} في  #{location}
+
+if(landArea)
+    p(dir='rtl') مساحة الأرض #{landArea} #{areaUnit}
+
+if(builtupArea)
+    p(dir='rtl') مسطحات البناء #{builtupArea} #{areaUnit}
+if(length && depth)
+    p(dir='rtl') اطوالها: الطول #{length} #{lengthUnit}٬ 
+        | العمق: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p(dir='rtl') رقم القطعة:  #{landNumber}
+
+if(areaNumber)
+    p(dir='rtl') رقم المخطط: #{areaNumber}
+
+if(totalStreets)
+    p(dir='rtl') 
+        if(totalStreets == 1) 
+            | يحدها #{totalStreets && `${totalStreets} شارع: `}
+        if(totalStreets == 2)
+            | يحدها #{totalStreets && `${totalStreets} شارع: `}
+        if(totalStreets == 3)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `}
+        if(totalStreets == 4)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `} 
+        if(street1Width)
+            | #{street1Facing ? `${street1Facing}٬ ` : ''}
+            | بعرض #{street1Width} #{lengthUnit} 
+        if(street2Width)
+            | و #{street2Facing ? `${street2Facing}٬ ` : ''}
+            | بعرض #{street2Width} #{lengthUnit} 
+        if(street3Width)
+            | و #{street3Facing ? `${street3Facing}٬ ` : ''}
+            | بعرض #{street3Width} #{lengthUnit} 
+        if(street4Width)
+            | و #{street4Facing ? `${street4Facing}٬ ` : ''}
+            | بعرض #{street4Width} #{lengthUnit}  
+        
+
+p(dir='rtl')
+    - let attrList = []
+    - noOfBedrooms && attrList.push(noOfBedrooms >= 1 && noOfBedrooms <=2  ? `${noOfBedrooms} غرفة`  : `${noOfBedrooms} غرف`)
+    - noOfBathrooms && attrList.push(noOfBathrooms >= 1 && noOfBathrooms <=2  ? `${noOfBathrooms} دورة مياه`  :   `${noOfBathrooms} دورات مياه`)
+    - noOfPalmsTrees && attrList.push(noOfPalmsTrees >= 1 && noOfPalmsTrees <=2  ? `${noOfPalmsTrees} نخلة`  : (noOfPalmsTrees >=11  ? `${noOfPalmsTrees} نخلة`  :  `${noOfPalmsTrees} نخلات`) )
+    - noOfWaterWells && attrList.push(noOfWaterWells >= 1 && noOfWaterWells <=2  ? `${noOfWaterWells} بئر مياه`  : (noOfWaterWells >=11  ? `${noOfWaterWells} بئر مياه`  :  `${noOfWaterWells} آبار مياه`) )
+    | مكونة من: #{attrList.join(' و ')}
+    
+if(electricity)
+  p(dir='rtl') واصل كهرباء
+
+if(water)
+  p(dir='rtl') واصل مياه
+
+if(wathiqStatustags)
+    p(dir='rtl') حالة الصك: #{wathiqStatustags.join('٬ ')}
+
+if(price)
+    p(dir='rtl') سعرها #{price} #{currency}
+
+if(wasaltManaged)
+    p(dir='rtl') هذا العرض مسوق من قبل شركة وصلت للخدمات العقارية
+
+// 48-sale-ar
+if(propertyType && listingFor && location)
+    p(dir='rtl') #{propertyType} #{listingFor} في  #{location}
+
+if(landArea)
+    p(dir='rtl') مساحة الأرض #{landArea} #{areaUnit}
+
+if(builtupArea)
+    p(dir='rtl') مسطحات البناء #{builtupArea} #{areaUnit}
+if(length && depth)
+    p(dir='rtl') اطوالها: الطول #{length} #{lengthUnit}٬ 
+        | العمق: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p(dir='rtl') رقم القطعة:  #{landNumber}
+
+if(areaNumber)
+    p(dir='rtl') رقم المخطط: #{areaNumber}
+
+if(totalStreets)
+    p(dir='rtl') 
+        if(totalStreets == 1) 
+            | يحدها #{totalStreets && `${totalStreets} شارع: `}
+        if(totalStreets == 2)
+            | يحدها #{totalStreets && ` ${totalStreets} شارع: `}
+        if(totalStreets == 3)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `}
+        if(totalStreets == 4)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `} 
+        if(street1Width)
+            | #{street1Facing ? `${street1Facing}٬ ` : ''}
+            | بعرض #{street1Width} #{lengthUnit} 
+        if(street2Width)
+            | و #{street2Facing ? `${street2Facing}٬ ` : ''}
+            | بعرض #{street2Width} #{lengthUnit} 
+        if(street3Width)
+            | و #{street3Facing ? `${street3Facing}٬ ` : ''}
+            | بعرض #{street3Width} #{lengthUnit} 
+        if(street4Width)
+            | و #{street4Facing ? `${street4Facing}٬ ` : ''}
+            | بعرض #{street4Width} #{lengthUnit}  
+        
+
+p(dir='rtl')
+    - let attrList = []
+    - noOfBedrooms && attrList.push(noOfBedrooms >= 1 && noOfBedrooms <=2  ? `${noOfBedrooms} غرفة`  : `${noOfBedrooms} غرف`)
+    - noOfBathrooms && attrList.push(noOfBathrooms >= 1 && noOfBathrooms <=2  ? `${noOfBathrooms} دورة مياه`  :   `${noOfBathrooms} دورات مياه`)
+    - noOfLivingrooms && attrList.push(noOfLivingrooms >= 1 && noOfLivingrooms <=2 ? `${noOfLivingrooms} صالة`  :   `${noOfLivingrooms} صالات`)
+    - noOfGuestRooms && attrList.push(noOfGuestRooms >= 1 && noOfGuestRooms <=2  ? `${noOfGuestRooms} مجلس`  :  `${noOfGuestRooms} مجالس`)
+    | مكونة من: #{attrList.join(' و ')}
+    
+if(furnishStatus)
+    p(dir='rtl') الاستراحة  #{furnishStatus}
+
+if(buildingYear)
+    p(dir='rtl') سنة البناء: #{buildingYear}
+
+if(amenities && amenities.length)
+    p(dir='rtl') مميزات العقار:
+    each amenity in amenities
+        p(dir='rtl') &nbsp; - &nbsp; #{amenity}
+
+if(fixtures && fixtures.length)
+    p(dir='rtl') التجهيزات:
+    each fixture in fixtures
+        p(dir='rtl') &nbsp; - &nbsp; #{fixture}
+
+if(wathiqStatustags)
+    p(dir='rtl') حالة الصك: #{wathiqStatustags.join('٬ ')}
+
+if(price)
+    p(dir='rtl') سعرها #{price} #{currency}
+
+if(wasaltManaged)
+    p(dir='rtl') هذا العرض مسوق من قبل شركة وصلت للخدمات العقارية
+
+
+// 53-sale-ar
+
+if(propertyType && listingFor && location)
+    p(dir='rtl') #{propertyType} #{listingFor} في  #{location}
+
+if(landArea)
+    p(dir='rtl') مساحة الأرض #{landArea} #{areaUnit}
+
+if(builtupArea)
+    p(dir='rtl') مسطحات البناء #{builtupArea} #{areaUnit}
+if(length && depth)
+    p(dir='rtl') اطوالها: الطول #{length} #{lengthUnit}٬ 
+        | العمق: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p(dir='rtl') رقم القطعة:  #{landNumber}
+
+if(areaNumber)
+    p(dir='rtl') رقم المخطط: #{areaNumber}
+
+if(totalStreets)
+    p(dir='rtl') 
+        if(totalStreets == 1) 
+            | يحدها #{totalStreets && `${totalStreets} شارع: `}
+        if(totalStreets == 2)
+            | يحدها #{totalStreets && `${totalStreets} شارع: `}
+        if(totalStreets == 3)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `}
+        if(totalStreets == 4)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `} 
+        if(street1Width)
+            | #{street1Facing ? `${street1Facing}٬ ` : ''}
+            | بعرض #{street1Width} #{lengthUnit} 
+        if(street2Width)
+            | و #{street2Facing ? `${street2Facing}٬ ` : ''}
+            | بعرض #{street2Width} #{lengthUnit} 
+        if(street3Width)
+            | و #{street3Facing ? `${street3Facing}٬ ` : ''}
+            | بعرض #{street3Width} #{lengthUnit} 
+        if(street4Width)
+            | و #{street4Facing ? `${street4Facing}٬ ` : ''}
+            | بعرض #{street4Width} #{lengthUnit}  
+        
+
+p(dir='rtl')
+    - let attrList = []
+    - noOfBedrooms && attrList.push(noOfBedrooms >= 1 && noOfBedrooms <=2  ? `${noOfBedrooms} غرفة`  : `${noOfBedrooms} غرف`)
+    - noOfBathrooms && attrList.push(noOfBathrooms >= 1 && noOfBathrooms <=2  ? `${noOfBathrooms} دورة مياه`  :   `${noOfBathrooms} دورات مياه`)
+    - noOfLivingrooms && attrList.push(noOfLivingrooms >= 1 && noOfLivingrooms <=2 ? `${noOfLivingrooms} صالة`  :   `${noOfLivingrooms} صالات`)
+    - noOfGuestRooms && attrList.push(noOfGuestRooms >= 1 && noOfGuestRooms <=2  ? `${noOfGuestRooms} مجلس`  :  `${noOfGuestRooms} مجالس`)
+    | مكونة من: #{attrList.join(' و ')}
+    
+if(furnishStatus)
+    p(dir='rtl') #{propertyType} #{furnishStatus}
+
+if(buildingYear)
+    p(dir='rtl') سنة البناء: #{buildingYear}
+
+if(amenities && amenities.length)
+    p(dir='rtl') مميزات العقار:
+    each amenity in amenities
+        p(dir='rtl') &nbsp; - &nbsp; #{amenity}
+
+if(fixtures && fixtures.length)
+    p(dir='rtl') التجهيزات:
+    each fixture in fixtures
+        p(dir='rtl') &nbsp; - &nbsp; #{fixture}
+
+if(wathiqStatustags)
+    p(dir='rtl') حالة الصك: #{wathiqStatustags.join('٬ ')}
+
+if(price)
+    p(dir='rtl') سعرها #{price} #{currency}
+
+if(wasaltManaged)
+    p(dir='rtl') هذا العرض مسوق من قبل شركة وصلت للخدمات العقارية
+
+// 42-sale-ar
+
+if(propertyType && listingFor && location)
+    p(dir='rtl') #{propertyType} سكنية #{listingFor} في  #{location}
+
+if(landArea)
+    p(dir='rtl') مساحة الأرض #{landArea} #{areaUnit}
+
+if(builtupArea)
+    p(dir='rtl') مسطحات البناء #{builtupArea} #{areaUnit}
+if(length && depth)
+    p(dir='rtl') اطوالها: الطول #{length} #{lengthUnit}٬ 
+        | العمق: #{depth} #{lengthUnit}
+
+if(landNumber)
+    p(dir='rtl') رقم القطعة:  #{landNumber}
+
+if(areaNumber)
+    p(dir='rtl') رقم المخطط: #{areaNumber}
+
+if(totalStreets)
+    p(dir='rtl') 
+        if(totalStreets == 1) 
+            | يحدها #{totalStreets && `${totalStreets} شارع: `}
+        if(totalStreets == 2)
+            | يحدها #{totalStreets && `${totalStreets} شارعشارعين: `}
+        if(totalStreets == 3)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `}
+        if(totalStreets == 4)
+            | يحدها #{totalStreets && `${totalStreets} شوارع: `} 
+        if(street1Width)
+            | #{street1Facing ? `${street1Facing}٬ ` : ''}
+            | بعرض #{street1Width} #{lengthUnit} 
+        if(street2Width)
+            | و #{street2Facing ? `${street2Facing}٬ ` : ''}
+            | بعرض #{street2Width} #{lengthUnit} 
+        if(street3Width)
+            | و #{street3Facing ? `${street3Facing}٬ ` : ''}
+            | بعرض #{street3Width} #{lengthUnit} 
+        if(street4Width)
+            | و #{street4Facing ? `${street4Facing}٬ ` : ''}
+            | بعرض #{street4Width} #{lengthUnit}  
+        
+
+p(dir='rtl')
+    - let attrList = []
+    - noOfFloors && attrList.push(noOfFloors >= 1 && noOfFloors <=2 ? `${noOfFloors} دور`  : (noOfFloors >=11  ? `${noOfFloors} دور`  :  `${noOfFloors} ادوار`))
+    - noOfBedrooms && attrList.push(noOfBedrooms >= 1 && noOfBedrooms <=2  ? `${noOfBedrooms} غرفة`  : `${noOfBedrooms} غرف`)
+    - noOfBathrooms && attrList.push(noOfBathrooms >= 1 && noOfBathrooms <=2  ? `${noOfBathrooms} دورة مياه`  :   `${noOfBathrooms} دورات مياه`)
+    - noOfLivingrooms && attrList.push(noOfLivingrooms >= 1 && noOfLivingrooms <=2 ? `${noOfLivingrooms} صالة`  :   `${noOfLivingrooms} صالات`)
+    - noOfGuestRooms && attrList.push(noOfGuestRooms >= 1 && noOfGuestRooms <=2  ? `${noOfGuestRooms} مجلس`  :  `${noOfGuestRooms} مجالس`)
+    - noOfParkings && attrList.push(noOfParkings >= 1 && noOfParkings <=2 ? `${noOfParkings} موقف`  : (noOfParkings >=11  ? `${noOfParkings} موقف`  :  `${noOfParkings} مواقف`))
+    | مكونة من: #{attrList.join(' و ')}
+    
+if(electricity)
+  p(dir='rtl') واصل كهرباء
+
+if(water)
+  p(dir='rtl') واصل مياه
+
+if(buildingYear)
+    p(dir='rtl') سنة البناء: #{buildingYear}
+
+if(amenities && amenities.length)
+    p(dir='rtl') مميزات العقار:
+    each amenity in amenities
+        p(dir='rtl') &nbsp; - &nbsp; #{amenity}
+
+if(fixtures && fixtures.length)
+    p(dir='rtl') التجهيزات:
+    each fixture in fixtures
+        p(dir='rtl') &nbsp; - &nbsp; #{fixture}
+
+if(wathiqStatustags)
+    p(dir='rtl') حالة الصك: #{wathiqStatustags.join('٬ ')}
+
+if(price)
+    p(dir='rtl') سعرها #{price} #{currency}
+
+if(wasaltManaged)
+    p(dir='rtl') هذا العرض مسوق من قبل شركة وصلت للخدمات العقارية

@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+service UtilityService {
+  rpc  getTypeMasterDataByType(getTypeMasterDataByTypeRequest) returns (getTypeMasterDataByTypeResponse) {};
+  rpc  getFeatureEntityData(getFeatureEntityDataReq) returns (getFeatureEntityDataRes) {};
+  rpc  getAllFeatureEntityData(getFeatureEntityDataReq) returns (getAllFeatureEntityDataRes) {};
+}
+
+message Error {
+    optional string message = 1;
+    required string code = 2;
+}
+
+message getTypeMasterDataByTypeRequest {
+  repeated string types = 1;
+}
+  
+message getTypeMasterDataByTypeResponse {
+  optional string error = 1;
+  optional bool status = 2;
+  repeated getTypeMasterDataByTypeData data = 3;
+  optional string message = 4;
+}
+  
+message getTypeMasterDataByTypeData {
+  int32 id =1;
+  string type = 2;
+  string slug = 3;
+  string code = 4;
+  bool isActive =5;
+  string name = 6;
+  string locale = 7;
+}
+
+message getFeatureEntityDataReq{
+  FeatureEntity whereCondition = 1;
+}
+
+message getFeatureEntityDataRes{
+  Error error = 1;
+  FeatureEntity featureEntity = 2;
+}
+
+message getAllFeatureEntityDataRes{
+  Error error = 1;
+  repeated FeatureEntity featureEntity = 2;
+}
+
+
+message FeatureEntity {
+  string entity_value = 1;
+  string entity_name = 2;
+  string entity_group = 3;
+  optional string iconClass = 8;
+}

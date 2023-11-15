@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+service ImageService {
+    rpc UploadImages (ImageRequest) returns (Response) {};
+}
+
+message Error {
+    optional string message = 1;
+    required string code = 2;
+}
+
+message Response {
+    optional Error error = 1;
+}
+
+message ImageRequest {
+    required int32 id = 1;
+    required PropertyFile file = 2;
+}
+message PropertyFile {
+    repeated string images = 1;
+    optional string floorPlans = 2;
+    repeated string deed = 3;
+    optional string brochure = 4;
+}
+message File {
+    optional string file = 1;
+}

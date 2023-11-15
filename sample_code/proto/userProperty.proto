@@ -1,0 +1,182 @@
+syntax = "proto3";
+service PropertyService {
+    rpc ArchiveProperty (PropertyArchiveRequest)  returns (Response) {};
+    rpc RenewProperty (PropertyRenewRequest)  returns (Response) {};
+    rpc UnpublishedProperty (PropertyRenewRequest)  returns (Response) {};
+    rpc UpdatePropertyStatus (PropertyStatusRequest)  returns (Response) {};
+    rpc GetUserProperty (UserPropertyRequest) returns (UserPropertyResponse) {};
+    rpc GetUserPropertyStatusCount (PropertyStatusCountRequest) returns (PropertyStatusCountResponse) {};
+    rpc TransferProperty (TransferPropertyRequest) returns (Response) {};
+    rpc SearchUserProperty (SearchUserPropertyRequest) returns (SearchPropertyResponse) {};
+    rpc GetUserCities (UserCitiesRequest) returns (CityResponse) {};
+    
+}
+
+message Error {
+    optional string message = 1;
+    required string code = 2;
+}
+message TransferPropertyRequest {
+    required int32 userId = 1;
+    required int32 agentId = 2;
+    required int32 propertyId = 3;
+}
+message Response {
+    optional Error error = 1;
+    optional Property property = 2;
+}
+message PropertyStatusCountRequest {
+    required int32 userId = 1;
+    required int32 agentId = 2;
+    required int32 statusTypeId = 3;
+}
+message PropertyStatusCountResponse {
+    optional Error error = 1;
+    repeated PropertyStatusResult headers = 2;
+}
+message PropertyStatusResult {
+    required int32 statusTypeId  = 1;
+    required string statusType  = 2;
+    required int32 count  = 3;
+    required bool active  = 4;
+}
+
+message SearchUserPropertyRequest {
+    required int32 userId = 1;
+    required string locale = 2;
+    optional int32 limit = 3;
+    optional int32 offset = 4;
+    required string findFor = 5;
+    optional string keyword = 6;
+    optional int32 purposeFor = 7;
+    optional int32 mainTypeId = 8;
+    optional int32 optionTypeId = 89;
+    optional int32 cityId = 10;
+    optional int32 agentId = 11;
+    optional int32 priceFrom = 12;
+    optional int32 priceTo = 13;
+}
+
+message UserPropertyRequest {
+    required int32 userId = 1;
+    optional int32 limit = 2;
+    optional int32 offset = 3;
+    required int32 statusTypeId = 4;
+    optional string keyword = 5;
+    optional int32 typeId = 6;
+    optional int32 bedrooms = 7;
+    optional int32 bathrooms = 8;
+    optional int32 cityId = 9;
+    optional int32 agentId = 10;
+    required string locale = 11;
+    required string subStatusTypeId = 12;
+    optional bool is_ambassador_app = 13;
+}
+message UserPropertyResponse {
+    optional Error error = 1;
+    required int32 count = 2;
+    repeated Property data = 3;
+}
+message SearchPropertyResponse {
+    optional Error error = 1;
+    optional PropertyData data = 2;
+}
+message PropertyData {
+    required int32 count = 1;
+    repeated Property rows = 2;
+}
+message Property {
+    required int32 id = 1;
+    optional string title = 2;
+    optional string slug = 3;
+    optional string publishedAt = 4; 
+    optional string createdAt = 5; 
+    optional int32 expiryDate = 6; 
+    optional UserPropertyGeneral general = 7;
+    optional UserPropertyAttribute attribute = 8;
+    optional UserInfo userInfo = 9;
+    repeated UserPropertyFile userPropertyFiles = 10;
+    optional int32 postPropertyId = 11;
+}
+message UserPropertyStatus {
+    optional bool isSold = 1;
+    optional bool isHotDeal = 2;
+    optional bool isExclusive = 3;
+    optional bool isInspected = 4;
+    optional bool isFeatured = 5;
+    optional bool isRecommended = 6;
+    optional string reason = 7;
+    
+}
+message UserPropertyGeneral {
+    optional string propertyStatusType = 1;
+    optional string source = 2; 
+    optional string propertyMainType = 3;
+    optional string external360Link = 4;
+    optional string externalVideoUrl = 5;
+    optional int32 sourceTypeId = 6;
+    optional string propertyRegionType = 7; 
+    optional int32 propertyRegionTypeId = 8; 
+    optional int32 propertyStatusTypeId = 9;
+    optional int32 propertyTypeId = 10;
+    optional int32 listingTypeId = 11;
+    optional string darReference = 12;
+    optional UserPropertyStatus status = 13;
+}
+message UserInfo {
+    optional string userId = 1;
+    optional string role = 2; 
+    optional string fullName = 3;
+    repeated int32 permissions = 4;
+}
+message UserPropertyFile {
+    optional string name = 1; 
+}
+message UserPropertyAttribute {
+    optional int32 noOfBedrooms = 1;
+    optional int32 noOfBathrooms = 2;
+    optional UserPropertyAreaAttribute area = 3;
+    optional UserPropertyPriceAttribute price = 4;
+}
+
+message UserPropertyAreaAttribute {
+    optional string propertyUnitType = 1;
+    optional int32 builtUpArea = 2;
+    optional int32 carpetArea = 3;
+}
+message UserPropertyPriceAttribute {
+    optional string propertyCurrencyType = 1;
+    optional double salePrice = 2;
+    optional double expectedRent = 3;
+    optional double yearlyCharges = 4;
+}
+
+message PropertyParamRequest {
+    required int32 id = 1;
+}
+message PropertyArchiveRequest {
+    required int32 id = 1;
+    required int32 userId = 2;
+}
+message PropertyRenewRequest {
+    required int32 id = 1;
+    required int32 userId = 2;
+}
+message PropertyStatusRequest {
+    required int32 id = 1;
+    required int32 userId = 2;
+    required int32 statusTypeId = 3;
+    required string statusType = 4;
+}
+message UserCitiesRequest {
+    required int32 userId = 1;
+    required string locale = 2;
+}
+message CityResponse {
+    optional Error error = 1;
+    repeated City city = 2;
+}
+message City {
+    required int32 id = 1;
+    required string name = 2;
+}

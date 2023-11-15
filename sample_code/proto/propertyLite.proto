@@ -1,0 +1,174 @@
+syntax = "proto3";
+
+service PropertyService {
+    rpc addPropertyForKsa (PropertyForKSARequest) returns (Response) {};
+    rpc AddPropertyForInternational (PropertyForInternationalRequest) returns (Response) {};
+    rpc AttachPropertyAmenities (PropertyAmenityRequest) returns (Response) {};
+    rpc AttachPropertyFiles (PropertyFileRequest)  returns (Response) {};
+    rpc DeleteProperty (PropertyParamRequest)  returns (Response) {};
+    rpc GetPropertyById (PropertyParamRequest) returns (Response) {};
+    rpc GetUserProperty (PropertyUserParamRequest) returns (UserPropertyResponse) {};
+}
+
+message XMLReq {
+    required string userId = 1;
+    required string xmlUrl = 2;
+}
+
+message Error {
+    optional string message = 1;
+    required string code = 2;
+}
+
+message Response {
+    optional Error error = 1;
+    optional Property property = 2;
+}
+message PropertyAmenityRequest {
+    required int32 id = 1;
+	repeated Amenity amenities = 2;
+}
+
+message PropertyForInternationalRequest {
+	required PropertyGeneral GeneralInfo = 1;
+    required PropertyAttribute Attribute = 2;
+    required PropertyLocation Location = 3;
+    required PropertyPrice Price = 4;
+    required PropertyTranslation Translation = 5;
+    required PropertyDescription Description = 6;
+    required PropertyAmenity Amenity = 7;
+    required PropertyFile File = 8;
+}
+
+message PropertyForKSARequest {
+	required PropertyGeneral GeneralInfo = 1;
+    required PropertyLocation Location = 2;
+    required PropertyPrice Price = 3;
+    optional PropertyTranslation Translation = 4;
+    required PropertyFile File = 5;
+}
+
+
+message PropertyGeneral {
+    required int32 propertyRegionId = 1;
+    required int32 listingTypeId = 2;
+    required int32 managedById = 3;
+    optional int32 mainTypeId = 4;
+    optional string unitReference = 5;
+    required int32 userId = 6;
+}
+
+message PropertyAttribute {
+    optional int32 noOfBedrooms = 1;
+    optional int32 noOfBathrooms = 2;
+    optional int32 facingTypeId = 3;
+    optional Area Area = 4;
+}
+
+message Area {
+    optional  int32 unitTypeId = 1;
+    optional int32 builtUpArea = 2;
+    optional int32 superBuildUpArea = 3;
+    optional string completionYear = 4;
+}
+
+
+message PropertyPrice {
+    optional int32 currencyTypeId = 1;
+    optional double monthlyChargeRange = 2;
+    optional double salePrice = 3;
+    optional double expectedRent = 4;
+    
+}
+
+message PropertyLocation {
+    optional int32 countryId = 1;
+    required int32 cityId = 2;
+    required int32 zoneId = 3;
+    optional string landmark = 4;
+    required string latitude = 5;
+    required string longitude = 6;
+}
+
+message PropertyTranslation {
+    Translation en = 1;
+    Translation ar = 2;
+}
+
+message PropertyDescription {
+    optional string sourceTypeId = 1;
+    optional string externalUrl = 2;
+    optional string externalVideoUrl = 3;
+}
+
+message PropertyAmenity {
+	repeated Amenity amenities = 1;
+}
+
+message PropertyFile {
+    repeated File Others = 1;
+    repeated File FloorPlans = 2;
+    optional File Deed = 3;
+}
+
+message Translation {
+    optional string title = 1;
+    optional string address = 2;
+    optional string description = 3;
+}
+
+
+message Amenity {
+    required int32 aminityId = 1;
+}
+
+message File {
+    optional string file = 1;
+}
+
+
+message PropertyFileRequest {
+    File MainImage = 1;
+	repeated File InteriorImages = 2;
+    repeated File ExteriorImages = 3;
+    repeated File FloorPlans = 4;
+    File Brochure = 5;
+  
+}
+
+message PropertyParamRequest {
+    required int32 id = 1;
+}
+message PropertyUserParamRequest {
+    required int32 id = 1;
+    required int32 page = 2;
+    required string locale = 3;
+    optional bool is_ambassador_app = 4;
+}
+message UserPropertyResponse {
+    optional Error error = 1;
+    repeated UserProperty userProperties = 2;
+}
+
+message UserProperty {
+    required int32 id = 1;
+    optional string title = 2;
+    optional string slug = 3;
+    optional int32 noOfBedrooms = 4;
+    optional int32 noOfBathrooms = 5; 
+    optional int32 userId = 6;
+  
+}
+
+message Property {
+    required int32 id = 1;
+    optional PropertyGeneral GeneralInfo = 2;
+    optional PropertyTranslation Translation = 3;
+    optional PropertyAttribute Attribute = 4; 
+    optional PropertyPrice Price = 5;
+    optional PropertyLocation Location = 6;
+    optional PropertyDescription Description = 7;
+    repeated PropertyAmenity Amenities = 8;
+    optional PropertyFile File = 9;
+}
+

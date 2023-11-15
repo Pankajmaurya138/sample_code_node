@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+service DocumentService {
+    rpc UploadDocuments (DocumentRequest) returns (Response) {};
+    rpc UserDocuments (DocumentListingRequest) returns (DocumentListingResponse) {};
+    rpc DeleteDocument (DocumentDeleteRequest) returns (Response) {};
+    rpc ping(statusRequest) returns(statusResponse){};
+}
+
+message Error {
+    optional string message = 1;
+    required string code = 2;
+}
+
+message Response {
+    optional Error error = 1;
+}
+
+message DocumentListingRequest {
+    required int32 userId = 1;
+    required string locale = 2;
+    optional int32 limit = 3;
+    optional int32 offset = 4;
+    optional string sort = 5;
+    optional string order = 6;
+}
+
+message DocumentListingResponse {
+    optional Error error = 1;
+    optional DocumentListingData data = 2;
+}
+
+message DocumentListingData {
+    required int32 count = 1;
+    repeated DocumentListing rows = 2;
+}
+
+message DocumentListing {
+    required int32 id = 1;
+    required int32 userId = 2;
+    required string name = 3;
+    required string status = 4;
+    required string createdAt = 5;
+    required int32 statusTypeId = 6;
+}
+
+
+
+message DocumentRequest {
+    required int32 userId = 1;
+    repeated Document document = 2;    
+}
+
+message Document {
+    optional string file = 1;
+}
+message DocumentDeleteRequest {
+    required int32 id = 1;
+    required string locale = 2;
+}
+
+message statusRequest {}
+
+message statusResponse {
+    string message = 1;
+}

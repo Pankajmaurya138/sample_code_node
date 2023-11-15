@@ -1,0 +1,571 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Thimar Real Estate | Property Service",
+    "description": ""
+  },
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "host": "localhost:4003",
+  "basePath": "/v1",
+  "paths": {
+    "/v1/createProperty": {
+      "post": {
+        "tags": ["Property"],
+        "summary": "create property | General Information",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "requestBody": {
+          "description": "General Information Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/createProperty"
+              }
+            }
+          }
+        },
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/attachPropertyDescription": {
+      "post": {
+        "tags": ["Property"],
+        "summary": "Add description",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "requestBody": {
+          "description": "Add Description Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/attachPropertyDescription"
+              }
+            }
+          }
+        },
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/attachPropertyAmenities": {
+      "post": {
+        "tags": ["Property"],
+        "summary": "Add Aminities",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "requestBody": {
+          "description": "Add Aminity Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/attachPropertyAmenities"
+              }
+            }
+          }
+        },
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/attachPropertyFiles": {
+      "post": {
+        "tags": ["Property"],
+        "summary": "Add Files to Property",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "requestBody": {
+          "description": "Add files Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/attachPropertyFiles"
+              }
+            }
+          }
+        },
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/getPropertyById/{id}": {
+      "get": {
+        "tags": ["Property"],
+        "summary": "Get property data by id",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Not authenticated"
+          }
+        }
+      }
+    },
+    "/v1/getUserProperty/{id}/{page}": {
+      "get": {
+        "tags": ["Property"],
+        "summary": "Get property data by user id",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "page",
+            "in": "path",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Not authenticated"
+          }
+        }
+      }
+    },
+    "/v1/deleteProperty/{id}": {
+      "get": {
+        "tags": ["Property"],
+        "summary": "Delete property data",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Not authenticated"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "id": {
+      "properties": {
+        "uuid": {
+          "type": "string"
+        }
+      }
+    },
+    "createProperty": {
+      "type": "object",
+      "properties": {
+        "listingTypeId": {
+          "type": "number"
+        },
+        "mainTypeId": {
+          "type": "number"
+        },
+        "propertyTypeId": {
+          "type": "number"
+        },
+        "optionTypeId": {
+          "type": "number"
+        },
+        "darReference": {
+          "type": "string"
+        },
+        "unitTypeId": {
+          "type": "number"
+        },
+        "unitReference": {
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "countryId": {
+          "type": "number"
+        },
+        "cityId": {
+          "type": "number"
+        },
+        "zoneId": {
+          "type": "number"
+        },
+        "latitude": {
+          "type": "string"
+        },
+        "longitude": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "number"
+        },
+        "isSold": {
+          "type": "boolean"
+        },
+        "isHotDeal": {
+          "type": "boolean"
+        },
+        "isInspected": {
+          "type": "boolean"
+        },
+        "isFeatured": {
+          "type": "boolean"
+        },
+        "Attribute": {
+          "type": "object",
+          "properties": {
+            "noOfBathrooms": {
+              "type": "number"
+            },
+            "noOfFloors": {
+              "type": "number"
+            },
+            "floorNumber": {
+              "type": "number"
+            },
+            "capacityPerRoom": {
+              "type": "number"
+            },
+            "campCapacity": {
+              "type": "number"
+            },
+            "Type": {
+              "type": "object",
+              "properties": {
+                "facingTypeId": {
+                  "type": "number"
+                },
+                "furnishingTypeId": {
+                  "type": "number"
+                },
+                "ownerShiptypeId": {
+                  "type": "number"
+                },
+                "residenceTypeId": {
+                  "type": "number"
+                },
+                "transactionTypeId": {
+                  "type": "number"
+                },
+                "roomTypeId": {
+                  "type": "number"
+                }
+              }
+            },
+            "Area": {
+              "type": "object",
+              "properties": {
+                "buildUpArea": {
+                  "type": "number"
+                },
+                "carpetArea": {
+                  "type": "number"
+                },
+                "superBuildUpArea": {
+                  "type": "number"
+                },
+                "completionYear": {
+                  "type": "number"
+                },
+                "maintenanceChargeCycleId": {
+                  "type": "number"
+                },
+                "maintenanceCharge": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "Location": {
+          "type": "object",
+          "properties": {
+            "landmark": {
+              "type": "string"
+            }
+          }
+        },
+        "Price": {
+          "type": "object",
+          "properties": {
+            "securityDepositAmount": {
+              "type": "number"
+            },
+            "currencyTypeId": {
+              "type": "number"
+            },
+            "rentCycle": {
+              "type": "number"
+            },
+            "monthlyChargeRange": {
+              "type": "number"
+            },
+            "isRentNegotiable": {
+              "type": "number"
+            },
+            "salePrice": {
+              "type": "number"
+            },
+            "expectedRent": {
+              "type": "number"
+            }
+          }
+        },
+        "Translation": {
+          "type": "object",
+          "properties": {
+            "en": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "string"
+                }
+              }
+            },
+            "ar": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "attachPropertyDescription": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+
+        "Description": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string"
+            },
+            "externalUrl": {
+              "type": "string"
+            },
+            "externalVideoLink": {
+              "type": "string"
+            }
+          }
+        },
+        "Translation": {
+          "type": "object",
+          "properties": {
+            "en": {
+              "type": "object",
+              "properties": {
+                "keywords": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            },
+            "ar": {
+              "type": "object",
+              "properties": {
+                "keywords": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "attachPropertyAmenities": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+
+        "amenities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "aminityId": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "attachPropertyFiles": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+
+        "MainImage": {
+          "type": "object",
+          "properties": {
+            "file": {
+              "type": "string"
+            }
+          }
+        },
+        "InteriorImages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "ExteriorImages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "FloorPlans": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "Brochure": {
+          "type": "object",
+          "properties": {
+            "file": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "description": "Enter Authorization",
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}
